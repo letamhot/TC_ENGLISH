@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QuaMienDiSanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ds_cauhoithuthach">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="noidung" Type="nvarchar(max)" />
+          <Property Name="dapantext" Type="nvarchar(max)" />
+          <Property Name="dapanABC" Type="nvarchar" MaxLength="50" />
+          <Property Name="ghichu" Type="nvarchar(max)" />
+          <Property Name="cuocthiid" Type="int" />
+          <Property Name="vitri" Type="int" />
+        </EntityType>
+        <EntityType Name="ds_cuocthi">
+          <Key>
+            <PropertyRef Name="cuocthiid" />
+          </Key>
+          <Property Name="cuocthiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tencuocthi" Type="nvarchar" MaxLength="50" />
+          <Property Name="doi1id" Type="int" />
+          <Property Name="tongdiemdoi1" Type="int" />
+          <Property Name="doi2id" Type="int" />
+          <Property Name="tongdiemdoi2" Type="int" />
+          <Property Name="doi3id" Type="int" />
+          <Property Name="tongdiemdoi3" Type="int" />
+          <Property Name="doi4id" Type="int" />
+          <Property Name="tongdiemdoi4" Type="int" />
+          <Property Name="trangthai" Type="bit" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="ngaycapnhat" Type="datetime" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="motacuocthi" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ds_chitietdiem">
+          <Key>
+            <PropertyRef Name="chitietdiemid" />
+          </Key>
+          <Property Name="chitietdiemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="diemid" Type="int" Nullable="false" />
+          <Property Name="sodiem" Type="int" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ds_diem">
+          <Key>
+            <PropertyRef Name="diemid" />
+          </Key>
+          <Property Name="diemid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doiid" Type="int" Nullable="false" />
+          <Property Name="phanthiid" Type="int" Nullable="false" />
+          <Property Name="sodiem" Type="int" />
+          <Property Name="cautraloi" Type="nvarchar" MaxLength="100" />
+          <Property Name="thoigiantraloi" Type="int" />
+          <Property Name="cauhoiid" Type="int" />
+          <Property Name="cuocthiid" Type="int" />
+        </EntityType>
+        <EntityType Name="ds_doi">
+          <Key>
+            <PropertyRef Name="doiid" />
+          </Key>
+          <Property Name="doiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tendoi" Type="nvarchar" MaxLength="200" />
+          <Property Name="diachiip" Type="nvarchar" MaxLength="50" />
+          <Property Name="tennguoichoi" Type="nvarchar" MaxLength="50" />
+          <Property Name="tendangnhap" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="matkhau" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="vitridoi" Type="int" />
+          <Property Name="vaitro" Type="nvarchar" MaxLength="10" />
+          <Property Name="cuocthiid" Type="int" />
+        </EntityType>
+        <EntityType Name="ds_goicaudiscovery">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doithiid" Type="int" Nullable="false" />
+          <Property Name="chude" Type="nvarchar(max)" />
+          <Property Name="noidungchude" Type="nvarchar(max)" />
+          <Property Name="noidungthisinh" Type="nvarchar(max)" />
+          <Property Name="vitri" Type="int" />
+          <Property Name="cauhoichaid" Type="int" />
+          <Property Name="cuocthiid" Type="int" />
+          <Property Name="trangthai" Type="bit" />
+          <Property Name="trangthailatAnhPhu" Type="int" />
+        </EntityType>
+        <EntityType Name="ds_goicauhoikhoidong">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="goicauhoiid" Type="int" Nullable="false" />
+          <Property Name="noidungcauhoi" Type="ntext" />
+          <Property Name="dapan" Type="nvarchar" MaxLength="100" />
+          <Property Name="cuocthiid" Type="int" />
+          <Property Name="vitri" Type="int" />
+        </EntityType>
+        <EntityType Name="ds_goicauhoishining">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="noidungcauhoi" Type="nvarchar(max)" />
+          <Property Name="dapan" Type="nvarchar(max)" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+          <Property Name="cuocthiid" Type="int" />
+          <Property Name="trangThai" Type="int" />
+          <Property Name="isvideo" Type="bit" />
+          <Property Name="urlhinhanh" Type="nvarchar(max)" />
+          <Property Name="vitri" Type="int" />
+          <Property Name="sodiem" Type="int" />
+        </EntityType>
+        <EntityType Name="ds_hienthicautraloi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cuocthiid" Type="int" />
+          <Property Name="doiid" Type="int" />
+          <Property Name="phanthiid" Type="int" />
+          <Property Name="cauhoi" Type="ntext" />
+          <Property Name="dapan" Type="nvarchar" MaxLength="500" />
+          <Property Name="traloi" Type="bit" />
+          <Property Name="cauhoiid" Type="int" />
+        </EntityType>
+        <EntityType Name="ds_phanthi">
+          <Key>
+            <PropertyRef Name="phanthi" />
+          </Key>
+          <Property Name="phanthi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenphanthi" Type="nvarchar" MaxLength="50" />
+          <Property Name="mota" Type="ntext" />
+        </EntityType>
+        <EntityType Name="ds_phanthikhangia">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cauthiid" Type="int" />
+          <Property Name="vitri" Type="int" />
+          <Property Name="noidungcauhoi" Type="ntext" />
+          <Property Name="dapan" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ds_userlogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tendoi" Type="nvarchar" MaxLength="255" />
+          <Property Name="tennguoichoi" Type="nvarchar" MaxLength="255" />
+          <Property Name="trangthai" Type="int" />
+          <Property Name="role" Type="varchar" MaxLength="10" />
+          <Property Name="doiid" Type="int" />
+          <Property Name="isreconnect" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="QuaMienDiSanModelStoreContainer">
+          <EntitySet Name="ds_cauhoithuthach" EntityType="Self.ds_cauhoithuthach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_cuocthi" EntityType="Self.ds_cuocthi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_chitietdiem" EntityType="Self.ds_chitietdiem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_diem" EntityType="Self.ds_diem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_doi" EntityType="Self.ds_doi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_goicaudiscovery" EntityType="Self.ds_goicaudiscovery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_goicauhoikhoidong" EntityType="Self.ds_goicauhoikhoidong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_goicauhoishining" EntityType="Self.ds_goicauhoishining" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_hienthicautraloi" EntityType="Self.ds_hienthicautraloi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_phanthi" EntityType="Self.ds_phanthi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_phanthikhangia" EntityType="Self.ds_phanthikhangia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ds_userlogin" EntityType="Self.ds_userlogin" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuaMienDiSanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QuaMienDiSanEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ds_cauhoithuthach" EntityType="QuaMienDiSanModel.ds_cauhoithuthach" />
+          <EntitySet Name="ds_cuocthi" EntityType="QuaMienDiSanModel.ds_cuocthi" />
+          <EntitySet Name="ds_chitietdiem" EntityType="QuaMienDiSanModel.ds_chitietdiem" />
+          <EntitySet Name="ds_diem" EntityType="QuaMienDiSanModel.ds_diem" />
+          <EntitySet Name="ds_doi" EntityType="QuaMienDiSanModel.ds_doi" />
+          <EntitySet Name="ds_goicaudiscovery" EntityType="QuaMienDiSanModel.ds_goicaudiscovery" />
+          <EntitySet Name="ds_goicauhoikhoidong" EntityType="QuaMienDiSanModel.ds_goicauhoikhoidong" />
+          <EntitySet Name="ds_goicauhoishining" EntityType="QuaMienDiSanModel.ds_goicauhoishining" />
+          <EntitySet Name="ds_hienthicautraloi" EntityType="QuaMienDiSanModel.ds_hienthicautraloi" />
+          <EntitySet Name="ds_phanthi" EntityType="QuaMienDiSanModel.ds_phanthi" />
+          <EntitySet Name="ds_phanthikhangia" EntityType="QuaMienDiSanModel.ds_phanthikhangia" />
+          <EntitySet Name="ds_userlogin" EntityType="QuaMienDiSanModel.ds_userlogin" />
+        </EntityContainer>
+        <EntityType Name="ds_cauhoithuthach">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dapantext" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dapanABC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cuocthiid" Type="Int32" />
+          <Property Name="vitri" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ds_cuocthi">
+          <Key>
+            <PropertyRef Name="cuocthiid" />
+          </Key>
+          <Property Name="cuocthiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tencuocthi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="doi1id" Type="Int32" />
+          <Property Name="tongdiemdoi1" Type="Int32" />
+          <Property Name="doi2id" Type="Int32" />
+          <Property Name="tongdiemdoi2" Type="Int32" />
+          <Property Name="doi3id" Type="Int32" />
+          <Property Name="tongdiemdoi3" Type="Int32" />
+          <Property Name="doi4id" Type="Int32" />
+          <Property Name="tongdiemdoi4" Type="Int32" />
+          <Property Name="trangthai" Type="Boolean" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="ngaycapnhat" Type="DateTime" Precision="3" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="motacuocthi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ds_chitietdiem">
+          <Key>
+            <PropertyRef Name="chitietdiemid" />
+          </Key>
+          <Property Name="chitietdiemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="diemid" Type="Int32" Nullable="false" />
+          <Property Name="sodiem" Type="Int32" />
+          <Property Name="ghichu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ds_diem">
+          <Key>
+            <PropertyRef Name="diemid" />
+          </Key>
+          <Property Name="diemid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doiid" Type="Int32" Nullable="false" />
+          <Property Name="phanthiid" Type="Int32" Nullable="false" />
+          <Property Name="sodiem" Type="Int32" />
+          <Property Name="cautraloi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="thoigiantraloi" Type="Int32" />
+          <Property Name="cauhoiid" Type="Int32" />
+          <Property Name="cuocthiid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ds_doi">
+          <Key>
+            <PropertyRef Name="doiid" />
+          </Key>
+          <Property Name="doiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tendoi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="diachiip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tennguoichoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tendangnhap" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="matkhau" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="vitridoi" Type="Int32" />
+          <Property Name="vaitro" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cuocthiid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ds_goicaudiscovery">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doithiid" Type="Int32" Nullable="false" />
+          <Property Name="chude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="noidungchude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="noidungthisinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vitri" Type="Int32" />
+          <Property Name="cauhoichaid" Type="Int32" />
+          <Property Name="cuocthiid" Type="Int32" />
+          <Property Name="trangthai" Type="Boolean" />
+          <Property Name="trangthailatAnhPhu" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ds_goicauhoikhoidong">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="goicauhoiid" Type="Int32" Nullable="false" />
+          <Property Name="noidungcauhoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dapan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cuocthiid" Type="Int32" />
+          <Property Name="vitri" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ds_goicauhoishining">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="noidungcauhoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dapan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="cuocthiid" Type="Int32" />
+          <Property Name="trangThai" Type="Int32" />
+          <Property Name="isvideo" Type="Boolean" />
+          <Property Name="urlhinhanh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="vitri" Type="Int32" />
+          <Property Name="sodiem" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ds_hienthicautraloi">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cuocthiid" Type="Int32" />
+          <Property Name="doiid" Type="Int32" />
+          <Property Name="phanthiid" Type="Int32" />
+          <Property Name="cauhoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dapan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="traloi" Type="Boolean" />
+          <Property Name="cauhoiid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ds_phanthi">
+          <Key>
+            <PropertyRef Name="phanthi" />
+          </Key>
+          <Property Name="phanthi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenphanthi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ds_phanthikhangia">
+          <Key>
+            <PropertyRef Name="cauhoiid" />
+          </Key>
+          <Property Name="cauhoiid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cauthiid" Type="Int32" />
+          <Property Name="vitri" Type="Int32" />
+          <Property Name="noidungcauhoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dapan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ds_userlogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tendoi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tennguoichoi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="trangthai" Type="Int32" />
+          <Property Name="role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="doiid" Type="Int32" />
+          <Property Name="isreconnect" Type="Boolean" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuaMienDiSanModelStoreContainer" CdmEntityContainer="QuaMienDiSanEntities">
+          <EntitySetMapping Name="ds_cauhoithuthach">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_cauhoithuthach">
+              <MappingFragment StoreEntitySet="ds_cauhoithuthach">
+                <ScalarProperty Name="vitri" ColumnName="vitri" />
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="dapanABC" ColumnName="dapanABC" />
+                <ScalarProperty Name="dapantext" ColumnName="dapantext" />
+                <ScalarProperty Name="noidung" ColumnName="noidung" />
+                <ScalarProperty Name="cauhoiid" ColumnName="cauhoiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_cuocthi">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_cuocthi">
+              <MappingFragment StoreEntitySet="ds_cuocthi">
+                <ScalarProperty Name="motacuocthi" ColumnName="motacuocthi" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="tongdiemdoi4" ColumnName="tongdiemdoi4" />
+                <ScalarProperty Name="doi4id" ColumnName="doi4id" />
+                <ScalarProperty Name="tongdiemdoi3" ColumnName="tongdiemdoi3" />
+                <ScalarProperty Name="doi3id" ColumnName="doi3id" />
+                <ScalarProperty Name="tongdiemdoi2" ColumnName="tongdiemdoi2" />
+                <ScalarProperty Name="doi2id" ColumnName="doi2id" />
+                <ScalarProperty Name="tongdiemdoi1" ColumnName="tongdiemdoi1" />
+                <ScalarProperty Name="doi1id" ColumnName="doi1id" />
+                <ScalarProperty Name="tencuocthi" ColumnName="tencuocthi" />
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_chitietdiem">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_chitietdiem">
+              <MappingFragment StoreEntitySet="ds_chitietdiem">
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="sodiem" ColumnName="sodiem" />
+                <ScalarProperty Name="diemid" ColumnName="diemid" />
+                <ScalarProperty Name="chitietdiemid" ColumnName="chitietdiemid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_diem">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_diem">
+              <MappingFragment StoreEntitySet="ds_diem">
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+                <ScalarProperty Name="cauhoiid" ColumnName="cauhoiid" />
+                <ScalarProperty Name="thoigiantraloi" ColumnName="thoigiantraloi" />
+                <ScalarProperty Name="cautraloi" ColumnName="cautraloi" />
+                <ScalarProperty Name="sodiem" ColumnName="sodiem" />
+                <ScalarProperty Name="phanthiid" ColumnName="phanthiid" />
+                <ScalarProperty Name="doiid" ColumnName="doiid" />
+                <ScalarProperty Name="diemid" ColumnName="diemid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_doi">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_doi">
+              <MappingFragment StoreEntitySet="ds_doi">
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+                <ScalarProperty Name="vaitro" ColumnName="vaitro" />
+                <ScalarProperty Name="vitridoi" ColumnName="vitridoi" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+                <ScalarProperty Name="tennguoichoi" ColumnName="tennguoichoi" />
+                <ScalarProperty Name="diachiip" ColumnName="diachiip" />
+                <ScalarProperty Name="tendoi" ColumnName="tendoi" />
+                <ScalarProperty Name="doiid" ColumnName="doiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_goicaudiscovery">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_goicaudiscovery">
+              <MappingFragment StoreEntitySet="ds_goicaudiscovery">
+                <ScalarProperty Name="trangthailatAnhPhu" ColumnName="trangthailatAnhPhu" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+                <ScalarProperty Name="cauhoichaid" ColumnName="cauhoichaid" />
+                <ScalarProperty Name="vitri" ColumnName="vitri" />
+                <ScalarProperty Name="noidungthisinh" ColumnName="noidungthisinh" />
+                <ScalarProperty Name="noidungchude" ColumnName="noidungchude" />
+                <ScalarProperty Name="chude" ColumnName="chude" />
+                <ScalarProperty Name="doithiid" ColumnName="doithiid" />
+                <ScalarProperty Name="cauhoiid" ColumnName="cauhoiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_goicauhoikhoidong">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_goicauhoikhoidong">
+              <MappingFragment StoreEntitySet="ds_goicauhoikhoidong">
+                <ScalarProperty Name="vitri" ColumnName="vitri" />
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+                <ScalarProperty Name="dapan" ColumnName="dapan" />
+                <ScalarProperty Name="noidungcauhoi" ColumnName="noidungcauhoi" />
+                <ScalarProperty Name="goicauhoiid" ColumnName="goicauhoiid" />
+                <ScalarProperty Name="cauhoiid" ColumnName="cauhoiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_goicauhoishining">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_goicauhoishining">
+              <MappingFragment StoreEntitySet="ds_goicauhoishining">
+                <ScalarProperty Name="sodiem" ColumnName="sodiem" />
+                <ScalarProperty Name="vitri" ColumnName="vitri" />
+                <ScalarProperty Name="urlhinhanh" ColumnName="urlhinhanh" />
+                <ScalarProperty Name="isvideo" ColumnName="isvideo" />
+                <ScalarProperty Name="trangThai" ColumnName="trangThai" />
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="dapan" ColumnName="dapan" />
+                <ScalarProperty Name="noidungcauhoi" ColumnName="noidungcauhoi" />
+                <ScalarProperty Name="cauhoiid" ColumnName="cauhoiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_hienthicautraloi">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_hienthicautraloi">
+              <MappingFragment StoreEntitySet="ds_hienthicautraloi">
+                <ScalarProperty Name="cauhoiid" ColumnName="cauhoiid" />
+                <ScalarProperty Name="traloi" ColumnName="traloi" />
+                <ScalarProperty Name="dapan" ColumnName="dapan" />
+                <ScalarProperty Name="cauhoi" ColumnName="cauhoi" />
+                <ScalarProperty Name="phanthiid" ColumnName="phanthiid" />
+                <ScalarProperty Name="doiid" ColumnName="doiid" />
+                <ScalarProperty Name="cuocthiid" ColumnName="cuocthiid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_phanthi">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_phanthi">
+              <MappingFragment StoreEntitySet="ds_phanthi">
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="tenphanthi" ColumnName="tenphanthi" />
+                <ScalarProperty Name="phanthi" ColumnName="phanthi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_phanthikhangia">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_phanthikhangia">
+              <MappingFragment StoreEntitySet="ds_phanthikhangia">
+                <ScalarProperty Name="dapan" ColumnName="dapan" />
+                <ScalarProperty Name="noidungcauhoi" ColumnName="noidungcauhoi" />
+                <ScalarProperty Name="vitri" ColumnName="vitri" />
+                <ScalarProperty Name="cauthiid" ColumnName="cauthiid" />
+                <ScalarProperty Name="cauhoiid" ColumnName="cauhoiid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ds_userlogin">
+            <EntityTypeMapping TypeName="QuaMienDiSanModel.ds_userlogin">
+              <MappingFragment StoreEntitySet="ds_userlogin">
+                <ScalarProperty Name="isreconnect" ColumnName="isreconnect" />
+                <ScalarProperty Name="doiid" ColumnName="doiid" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="tennguoichoi" ColumnName="tennguoichoi" />
+                <ScalarProperty Name="tendoi" ColumnName="tendoi" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

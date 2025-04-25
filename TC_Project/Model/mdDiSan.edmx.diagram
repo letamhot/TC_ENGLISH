@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3b7c2eca02ac4cb984390e435e7010ac" Name="Diagram1">
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_cauhoithuthach" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_cuocthi" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_chitietdiem" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_diem" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_doi" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_goicaudiscovery" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_goicauhoikhoidong" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_goicauhoishining" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_hienthicautraloi" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_phanthi" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_phanthikhangia" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuaMienDiSanModel.ds_userlogin" Width="1.5" PointX="8.75" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
