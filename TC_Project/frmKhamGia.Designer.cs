@@ -42,10 +42,10 @@
             // 
             this.labelCauHoi.BackColor = System.Drawing.Color.Transparent;
             this.labelCauHoi.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCauHoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelCauHoi.Location = new System.Drawing.Point(279, 136);
+            this.labelCauHoi.ForeColor = System.Drawing.Color.Black;
+            this.labelCauHoi.Location = new System.Drawing.Point(102, 191);
             this.labelCauHoi.Name = "labelCauHoi";
-            this.labelCauHoi.Size = new System.Drawing.Size(841, 41);
+            this.labelCauHoi.Size = new System.Drawing.Size(1168, 41);
             this.labelCauHoi.TabIndex = 0;
             this.labelCauHoi.Text = "Câu hỏi";
             this.labelCauHoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -53,34 +53,36 @@
             // lblCauHoi
             // 
             this.lblCauHoi.BackColor = System.Drawing.Color.Transparent;
-            this.lblCauHoi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblCauHoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCauHoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCauHoi.Location = new System.Drawing.Point(286, 177);
+            this.lblCauHoi.ForeColor = System.Drawing.Color.Black;
+            this.lblCauHoi.Location = new System.Drawing.Point(102, 263);
             this.lblCauHoi.Name = "lblCauHoi";
-            this.lblCauHoi.Size = new System.Drawing.Size(841, 318);
+            this.lblCauHoi.Size = new System.Drawing.Size(1157, 311);
             this.lblCauHoi.TabIndex = 1;
-            this.lblCauHoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCauHoi.Text = "What is your name?";
             // 
             // pbDA
             // 
             this.pbDA.BackColor = System.Drawing.Color.Transparent;
             this.pbDA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbDA.BackgroundImage")));
+            this.pbDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbDA.Controls.Add(this.lblDapAn);
-            this.pbDA.Location = new System.Drawing.Point(166, 498);
+            this.pbDA.Location = new System.Drawing.Point(31, 594);
             this.pbDA.Name = "pbDA";
-            this.pbDA.Size = new System.Drawing.Size(1106, 208);
+            this.pbDA.Size = new System.Drawing.Size(1310, 135);
             this.pbDA.TabIndex = 4;
             // 
             // lblDapAn
             // 
             this.lblDapAn.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDapAn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDapAn.Location = new System.Drawing.Point(254, 39);
+            this.lblDapAn.ForeColor = System.Drawing.Color.Black;
+            this.lblDapAn.Location = new System.Drawing.Point(520, 0);
             this.lblDapAn.Name = "lblDapAn";
-            this.lblDapAn.Size = new System.Drawing.Size(725, 134);
+            this.lblDapAn.Size = new System.Drawing.Size(787, 138);
             this.lblDapAn.TabIndex = 0;
-            this.lblDapAn.Text = "label3";
+            this.lblDapAn.Text = "Listen to the following piece of music. What is the title of the song and its com" +
+    "poser?  Listen to the following piece of music. What is the title of the song an" +
+    "d its composer?  ";
             this.lblDapAn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pbClose

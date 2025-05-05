@@ -36,7 +36,8 @@ namespace TC_Project
             if (ds != null)
             {
                 labelDapAnCT.Text = "SHOW DETAILED ANSWER FOR QUESTION " + ds.vitri;
-                labelDapAnCT.ForeColor = Color.Red;
+                labelDapAnCT.ForeColor = Color.Black;
+                txtDapAnCT.ForeColor = Color.Black;
                 txtDapAnCT.Text = ds.dapantext;
                 txtDapAnCT.Font = new Font("Arial", ds.dapantext.Length > 50 ? 24 : ds.dapantext.Length < 10 ? 28 : 26, FontStyle.Bold);
             }

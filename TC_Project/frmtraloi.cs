@@ -67,15 +67,15 @@ namespace TC_Project
                             ds_hienthicautraloi item = lsKetQua[i];
                             var lbl = this.Controls.Find("lblDapAn" + (i + 1), true).FirstOrDefault() as Label;
                             var lbl1 = this.Controls.Find("lbltraloi" + (i + 1), true).FirstOrDefault() as Label;
-                            lbl.Font = new Font("Arial", 14, FontStyle.Bold);
+                            lbl.Font = new Font("Arial", lsKetQua[i].dapan.Length > 50 ? 18 : lsKetQua[i].dapan.Length < 10 ? 22 : 20, FontStyle.Bold);
+
                             lbl.Text = lsKetQua[i].dapan;
                             lbl.ForeColor = Color.DodgerBlue;
 
                             lbl.Visible = true;
 
-                            lbl1.Text = lsKetQua[i].traloi == true ? "CORRECT" : "WRONG";
-                            lbl1.ForeColor = lsKetQua[i].traloi == true ? lbl1.ForeColor = Color.Green : lbl1.ForeColor = Color.Red;
-                            lbl1.Font = new Font("Showcard Gothic", 14, FontStyle.Bold);
+                            lbl1.BackgroundImage = lsKetQua[i].traloi == true ? Image.FromFile(currentPath + "\\Resources\\group4\\true.png") : Image.FromFile(currentPath + "\\Resources\\group4\\false.png");
+                            
                             lbl1.Visible = true;
 
                         }
@@ -86,15 +86,13 @@ namespace TC_Project
                         {
                             ds_hienthicautraloi item = lsKetQua[i];
                             var lbl = this.Controls.Find("lblDapAn" + (i + 1), true).FirstOrDefault() as Label;
-                            var lbl1 = this.Controls.Find("lbltraloi" + (i + 1), true).FirstOrDefault() as Label;
+                            var lbl1 = this.Controls.Find("lbltraloi" + (i + 1), true).FirstOrDefault() as Panel;
                             lbl.Text = lsKetQua[i].dapan;
                             lbl.ForeColor = Color.DodgerBlue;
 
                             lbl.Visible = true;
 
-                            lbl1.Text = lsKetQua[i].traloi == true ? "CORRECT" : "WRONG";
-                            lbl1.ForeColor = lsKetQua[i].traloi == true ? lbl1.ForeColor = Color.Green : lbl1.ForeColor = Color.Red;
-                            lbl1.Font = new Font("Showcard Gothic", 14, FontStyle.Bold);
+                            lbl1.BackgroundImage = lsKetQua[i].traloi == true ? Image.FromFile(currentPath + "\\Resources\\group4\\true.png") : Image.FromFile(currentPath + "\\Resources\\group4\\false.png");
                             lbl1.Visible = true;
 
 

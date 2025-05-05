@@ -49,12 +49,12 @@ namespace TC_Project
             if (_cauhoiid == 0)
             {
                 labelCauHoi.Visible = true;
-                labelCauHoi.Text = "Thể lệ cuộc thi:";
+                labelCauHoi.Text = "Contest rules: ";
                 lblCauHoi.Visible = true;
                 lblDapAn.Visible = false;
                 pbDA.Visible = false;
-                lblCauHoi.Text = "Phần thi này sẽ có 4 câu hỏi dành cho các cổ động viên.\nCâu hỏi có nội dung liên quan đến nhà tài trợ chương trình hoặc những nội dung khác.";
-                
+                lblCauHoi.Text = "This section will have 4 questions for audiences.\nQuestions will be related to the program sponsor or other content.";
+
             }
             else
             {
@@ -62,7 +62,7 @@ namespace TC_Project
 
                 int idCuocThiHienTai = cuocThiHienTai.cuocthiid;
                 ds_phanthikhangia dskg = _entities.ds_phanthikhangia.Find(_cauhoiid);
-                labelCauHoi.Text = "Câu hỏi số " + dskg.vitri + ":";
+                labelCauHoi.Text = "Questions number " + dskg.vitri + ":";
                 lblCauHoi.Text = dskg.noidungcauhoi.ToString();
                 lblCauHoi.Visible = true;
                 labelCauHoi.Visible = true;

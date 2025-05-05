@@ -63,27 +63,26 @@
             // 
             // labelDapAnCT
             // 
-            this.labelDapAnCT.AutoSize = true;
             this.labelDapAnCT.BackColor = System.Drawing.Color.Transparent;
-            this.labelDapAnCT.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDapAnCT.ForeColor = System.Drawing.Color.Red;
-            this.labelDapAnCT.Location = new System.Drawing.Point(320, 195);
+            this.labelDapAnCT.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDapAnCT.ForeColor = System.Drawing.Color.Black;
+            this.labelDapAnCT.Location = new System.Drawing.Point(234, 250);
             this.labelDapAnCT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDapAnCT.Name = "labelDapAnCT";
-            this.labelDapAnCT.Size = new System.Drawing.Size(326, 34);
+            this.labelDapAnCT.Size = new System.Drawing.Size(858, 46);
             this.labelDapAnCT.TabIndex = 85;
-            this.labelDapAnCT.Text = "Hiển thị chi tiết đáp án";
+            this.labelDapAnCT.Text = "SHOW DETAILED ANSWER FOR QUESTION  3";
             // 
             // txtDapAnCT
             // 
-            this.txtDapAnCT.BackColor = System.Drawing.Color.PaleGreen;
-            this.txtDapAnCT.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDapAnCT.ForeColor = System.Drawing.Color.OrangeRed;
-            this.txtDapAnCT.Location = new System.Drawing.Point(183, 245);
+            this.txtDapAnCT.BackColor = System.Drawing.Color.Transparent;
+            this.txtDapAnCT.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDapAnCT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtDapAnCT.Location = new System.Drawing.Point(207, 357);
             this.txtDapAnCT.Name = "txtDapAnCT";
-            this.txtDapAnCT.Size = new System.Drawing.Size(957, 399);
+            this.txtDapAnCT.Size = new System.Drawing.Size(951, 332);
             this.txtDapAnCT.TabIndex = 88;
-            this.txtDapAnCT.Text = "label1";
+            this.txtDapAnCT.Text = resources.GetString("txtDapAnCT.Text");
             // 
             // fmHienThiChiTiet
             // 
@@ -105,7 +104,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

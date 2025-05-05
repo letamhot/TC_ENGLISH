@@ -67,7 +67,7 @@ namespace TC_Project
             pbMini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbMini.BackgroundImage")));
             pbMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pbMini.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbMini.ErrorImage")));
-            pbMini.Location = new System.Drawing.Point(1302, 12);
+            pbMini.Location = new System.Drawing.Point(1304, 9);
             pbMini.Name = "pbMini";
             pbMini.Size = new System.Drawing.Size(26, 28);
             pbMini.TabIndex = 91;
@@ -78,7 +78,7 @@ namespace TC_Project
             // 
             this.lbl11.BackColor = System.Drawing.Color.Transparent;
             this.lbl11.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl11.Location = new System.Drawing.Point(364, 294);
+            this.lbl11.Location = new System.Drawing.Point(366, 291);
             this.lbl11.Name = "lbl11";
             this.lbl11.Size = new System.Drawing.Size(189, 78);
             this.lbl11.TabIndex = 70;
@@ -88,7 +88,7 @@ namespace TC_Project
             // 
             this.lbl21.BackColor = System.Drawing.Color.Transparent;
             this.lbl21.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl21.Location = new System.Drawing.Point(591, 294);
+            this.lbl21.Location = new System.Drawing.Point(593, 291);
             this.lbl21.Name = "lbl21";
             this.lbl21.Size = new System.Drawing.Size(189, 78);
             this.lbl21.TabIndex = 71;
@@ -98,7 +98,7 @@ namespace TC_Project
             // 
             this.lbl41.BackColor = System.Drawing.Color.Transparent;
             this.lbl41.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl41.Location = new System.Drawing.Point(1049, 294);
+            this.lbl41.Location = new System.Drawing.Point(1051, 291);
             this.lbl41.Name = "lbl41";
             this.lbl41.Size = new System.Drawing.Size(189, 78);
             this.lbl41.TabIndex = 73;
@@ -108,7 +108,7 @@ namespace TC_Project
             // 
             this.lbl31.BackColor = System.Drawing.Color.Transparent;
             this.lbl31.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl31.Location = new System.Drawing.Point(820, 294);
+            this.lbl31.Location = new System.Drawing.Point(822, 291);
             this.lbl31.Name = "lbl31";
             this.lbl31.Size = new System.Drawing.Size(189, 78);
             this.lbl31.TabIndex = 72;
@@ -118,7 +118,7 @@ namespace TC_Project
             // 
             this.lbl42.BackColor = System.Drawing.Color.Transparent;
             this.lbl42.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl42.Location = new System.Drawing.Point(1049, 382);
+            this.lbl42.Location = new System.Drawing.Point(1051, 379);
             this.lbl42.Name = "lbl42";
             this.lbl42.Size = new System.Drawing.Size(189, 78);
             this.lbl42.TabIndex = 77;
@@ -128,7 +128,7 @@ namespace TC_Project
             // 
             this.lbl32.BackColor = System.Drawing.Color.Transparent;
             this.lbl32.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl32.Location = new System.Drawing.Point(820, 382);
+            this.lbl32.Location = new System.Drawing.Point(822, 379);
             this.lbl32.Name = "lbl32";
             this.lbl32.Size = new System.Drawing.Size(189, 78);
             this.lbl32.TabIndex = 76;
@@ -138,7 +138,7 @@ namespace TC_Project
             // 
             this.lbl22.BackColor = System.Drawing.Color.Transparent;
             this.lbl22.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl22.Location = new System.Drawing.Point(591, 382);
+            this.lbl22.Location = new System.Drawing.Point(593, 379);
             this.lbl22.Name = "lbl22";
             this.lbl22.Size = new System.Drawing.Size(189, 78);
             this.lbl22.TabIndex = 75;
@@ -148,7 +148,7 @@ namespace TC_Project
             // 
             this.lbl12.BackColor = System.Drawing.Color.Transparent;
             this.lbl12.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl12.Location = new System.Drawing.Point(364, 382);
+            this.lbl12.Location = new System.Drawing.Point(366, 379);
             this.lbl12.Name = "lbl12";
             this.lbl12.Size = new System.Drawing.Size(189, 78);
             this.lbl12.TabIndex = 74;
@@ -158,7 +158,7 @@ namespace TC_Project
             // 
             this.lbl43.BackColor = System.Drawing.Color.Transparent;
             this.lbl43.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl43.Location = new System.Drawing.Point(1049, 468);
+            this.lbl43.Location = new System.Drawing.Point(1051, 465);
             this.lbl43.Name = "lbl43";
             this.lbl43.Size = new System.Drawing.Size(189, 80);
             this.lbl43.TabIndex = 81;
@@ -168,7 +168,7 @@ namespace TC_Project
             // 
             this.lbl33.BackColor = System.Drawing.Color.Transparent;
             this.lbl33.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl33.Location = new System.Drawing.Point(820, 468);
+            this.lbl33.Location = new System.Drawing.Point(822, 465);
             this.lbl33.Name = "lbl33";
             this.lbl33.Size = new System.Drawing.Size(189, 80);
             this.lbl33.TabIndex = 80;
@@ -178,7 +178,7 @@ namespace TC_Project
             // 
             this.lbl23.BackColor = System.Drawing.Color.Transparent;
             this.lbl23.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl23.Location = new System.Drawing.Point(591, 468);
+            this.lbl23.Location = new System.Drawing.Point(593, 465);
             this.lbl23.Name = "lbl23";
             this.lbl23.Size = new System.Drawing.Size(189, 80);
             this.lbl23.TabIndex = 79;
@@ -188,7 +188,7 @@ namespace TC_Project
             // 
             this.lbl13.BackColor = System.Drawing.Color.Transparent;
             this.lbl13.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl13.Location = new System.Drawing.Point(364, 468);
+            this.lbl13.Location = new System.Drawing.Point(366, 465);
             this.lbl13.Name = "lbl13";
             this.lbl13.Size = new System.Drawing.Size(189, 80);
             this.lbl13.TabIndex = 78;
@@ -247,7 +247,7 @@ namespace TC_Project
             this.pbClose.BackColor = System.Drawing.Color.Transparent;
             this.pbClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbClose.BackgroundImage")));
             this.pbClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbClose.Location = new System.Drawing.Point(1334, 12);
+            this.pbClose.Location = new System.Drawing.Point(1336, 9);
             this.pbClose.Name = "pbClose";
             this.pbClose.Size = new System.Drawing.Size(28, 28);
             this.pbClose.TabIndex = 92;
@@ -259,7 +259,7 @@ namespace TC_Project
             this.lblTongDiem1.BackColor = System.Drawing.Color.Transparent;
             this.lblTongDiem1.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongDiem1.ForeColor = System.Drawing.Color.Red;
-            this.lblTongDiem1.Location = new System.Drawing.Point(363, 640);
+            this.lblTongDiem1.Location = new System.Drawing.Point(365, 637);
             this.lblTongDiem1.Name = "lblTongDiem1";
             this.lblTongDiem1.Size = new System.Drawing.Size(189, 95);
             this.lblTongDiem1.TabIndex = 93;
@@ -270,7 +270,7 @@ namespace TC_Project
             this.lblTongDiem2.BackColor = System.Drawing.Color.Transparent;
             this.lblTongDiem2.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongDiem2.ForeColor = System.Drawing.Color.Red;
-            this.lblTongDiem2.Location = new System.Drawing.Point(590, 640);
+            this.lblTongDiem2.Location = new System.Drawing.Point(592, 637);
             this.lblTongDiem2.Name = "lblTongDiem2";
             this.lblTongDiem2.Size = new System.Drawing.Size(189, 95);
             this.lblTongDiem2.TabIndex = 94;
@@ -281,7 +281,7 @@ namespace TC_Project
             this.lblTongDiem3.BackColor = System.Drawing.Color.Transparent;
             this.lblTongDiem3.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongDiem3.ForeColor = System.Drawing.Color.Red;
-            this.lblTongDiem3.Location = new System.Drawing.Point(819, 640);
+            this.lblTongDiem3.Location = new System.Drawing.Point(821, 637);
             this.lblTongDiem3.Name = "lblTongDiem3";
             this.lblTongDiem3.Size = new System.Drawing.Size(189, 95);
             this.lblTongDiem3.TabIndex = 95;
@@ -292,7 +292,7 @@ namespace TC_Project
             this.lblTongDiem4.BackColor = System.Drawing.Color.Transparent;
             this.lblTongDiem4.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongDiem4.ForeColor = System.Drawing.Color.Red;
-            this.lblTongDiem4.Location = new System.Drawing.Point(1049, 640);
+            this.lblTongDiem4.Location = new System.Drawing.Point(1051, 637);
             this.lblTongDiem4.Name = "lblTongDiem4";
             this.lblTongDiem4.Size = new System.Drawing.Size(189, 95);
             this.lblTongDiem4.TabIndex = 96;
@@ -302,7 +302,7 @@ namespace TC_Project
             // 
             this.lbl14.BackColor = System.Drawing.Color.Transparent;
             this.lbl14.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl14.Location = new System.Drawing.Point(364, 554);
+            this.lbl14.Location = new System.Drawing.Point(366, 551);
             this.lbl14.Name = "lbl14";
             this.lbl14.Size = new System.Drawing.Size(189, 80);
             this.lbl14.TabIndex = 82;
@@ -312,7 +312,7 @@ namespace TC_Project
             // 
             this.lbl24.BackColor = System.Drawing.Color.Transparent;
             this.lbl24.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl24.Location = new System.Drawing.Point(591, 554);
+            this.lbl24.Location = new System.Drawing.Point(593, 551);
             this.lbl24.Name = "lbl24";
             this.lbl24.Size = new System.Drawing.Size(189, 80);
             this.lbl24.TabIndex = 83;
@@ -322,7 +322,7 @@ namespace TC_Project
             // 
             this.lbl34.BackColor = System.Drawing.Color.Transparent;
             this.lbl34.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl34.Location = new System.Drawing.Point(820, 554);
+            this.lbl34.Location = new System.Drawing.Point(822, 551);
             this.lbl34.Name = "lbl34";
             this.lbl34.Size = new System.Drawing.Size(189, 80);
             this.lbl34.TabIndex = 84;
@@ -332,7 +332,7 @@ namespace TC_Project
             // 
             this.lbl44.BackColor = System.Drawing.Color.Transparent;
             this.lbl44.Font = new System.Drawing.Font("Arial Narrow", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl44.Location = new System.Drawing.Point(1049, 554);
+            this.lbl44.Location = new System.Drawing.Point(1051, 551);
             this.lbl44.Name = "lbl44";
             this.lbl44.Size = new System.Drawing.Size(189, 80);
             this.lbl44.TabIndex = 85;
