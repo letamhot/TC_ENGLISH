@@ -1363,7 +1363,7 @@ namespace TC_Project
             {
                 invisibleGui();
                 //lblthele.Text = "Thể lệ phần thi:";
-                lblthele.Text = "Please invite candidates " + teamplaying.tennguoichoi.ToUpper() + " chooses a question package!";
+                lblthele.Text = "Question package!";
             }
             else
             {
@@ -1377,7 +1377,7 @@ namespace TC_Project
                         lblthele.Text = "Candidate " + teamplaying.tennguoichoi.ToUpper() + " is doing the section";
                     }
                     lblNoiDungCauHoi.Text = _entities.ds_goicauhoikhoidong.Find(cauhoiid).noidungcauhoi;
-                    labelNoiDungCauHoi.Text = "Question number " + _entities.ds_goicauhoikhoidong.Find(cauhoiid).vitri + ":";
+                    labelNoiDungCauHoi.Text = "Question " + _entities.ds_goicauhoikhoidong.Find(cauhoiid).vitri + ":";
                 }
                 else
                 {
@@ -2268,17 +2268,17 @@ namespace TC_Project
                     //Hiển thị loại câu hỏi theo vị trí
                     if(khamPha.vitri == 1 || khamPha.vitri == 2)
                     {
-                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ":";
+                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following words or phrases to make a complete sentence";
 
                     }
                     else if(khamPha.vitri == 3 || khamPha.vitri == 4)
                     {
-                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ":";
+                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful conversation";
 
                     }
                     else
                     {
-                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ":";
+                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful paragraph";
 
                     }
                     // Xóa các Button cũ

@@ -66,12 +66,12 @@
             this.labelDapAnCT.BackColor = System.Drawing.Color.Transparent;
             this.labelDapAnCT.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDapAnCT.ForeColor = System.Drawing.Color.Black;
-            this.labelDapAnCT.Location = new System.Drawing.Point(234, 250);
+            this.labelDapAnCT.Location = new System.Drawing.Point(215, 250);
             this.labelDapAnCT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDapAnCT.Name = "labelDapAnCT";
-            this.labelDapAnCT.Size = new System.Drawing.Size(858, 46);
+            this.labelDapAnCT.Size = new System.Drawing.Size(877, 46);
             this.labelDapAnCT.TabIndex = 85;
-            this.labelDapAnCT.Text = "SHOW DETAILED ANSWER FOR QUESTION  3";
+            this.labelDapAnCT.Text = "QUESTION  3:";
             // 
             // txtDapAnCT
             // 

@@ -35,7 +35,7 @@ namespace TC_Project
             ds_cauhoithuthach ds = _entities.ds_cauhoithuthach.FirstOrDefault(x => x.cauhoiid == cauhoiid && x.cuocthiid == cuocthiId);
             if (ds != null)
             {
-                labelDapAnCT.Text = "SHOW DETAILED ANSWER FOR QUESTION " + ds.vitri;
+                labelDapAnCT.Text = "QUESTION " + ds.vitri+":";
                 labelDapAnCT.ForeColor = Color.Black;
                 txtDapAnCT.ForeColor = Color.Black;
                 txtDapAnCT.Text = ds.dapantext;
