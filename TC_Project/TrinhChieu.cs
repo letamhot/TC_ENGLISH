@@ -2281,7 +2281,8 @@ namespace TC_Project
                         lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful paragraph";
 
                     }
-                    // Xóa các Button cũ
+                    // Xóa các Button cũ với hiệu ứng mượt
+                    flowPanelSentences.SuspendLayout();
                     flowPanelSentences.Controls.Clear();
 
                     // Cấu hình FlowLayoutPanel
@@ -2348,6 +2349,7 @@ namespace TC_Project
 
                         flowPanelSentences.Controls.Add(btn);
                     }
+                    flowPanelSentences.ResumeLayout();
                 }
             }
 

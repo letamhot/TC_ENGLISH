@@ -78,9 +78,9 @@
             this.txtDapAnCT.BackColor = System.Drawing.Color.Transparent;
             this.txtDapAnCT.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDapAnCT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDapAnCT.Location = new System.Drawing.Point(207, 357);
+            this.txtDapAnCT.Location = new System.Drawing.Point(207, 310);
             this.txtDapAnCT.Name = "txtDapAnCT";
-            this.txtDapAnCT.Size = new System.Drawing.Size(951, 332);
+            this.txtDapAnCT.Size = new System.Drawing.Size(951, 379);
             this.txtDapAnCT.TabIndex = 88;
             this.txtDapAnCT.Text = resources.GetString("txtDapAnCT.Text");
             // 
