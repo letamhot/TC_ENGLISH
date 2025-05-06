@@ -220,7 +220,7 @@ namespace TC_Project
                         onoffChinhPhuc(false);
                         onoffflowPanelSentences(false);
 
-                        onoffTimeMath(true);
+                        onoffTimeMath(false);
                         lblThoiGian.Visible = true;
 
                         //lblThoiGiankg.Visible = false;
@@ -429,16 +429,18 @@ namespace TC_Project
                                 var khamPha = _entities.ds_goicaudiscovery.FirstOrDefault(x => x.cauhoiid == cauhoiId && x.trangthai == true);
                                 if (!string.IsNullOrWhiteSpace(khamPha.noidungthisinh))
                                 {
-                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), true, true, true, diemGK, false);
                                     timerTC.Enabled = true;
                                     load6NutMacDinh();
                                     ReloadPanelAndPictures();
+                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), true, true, true, diemGK, false);
+
 
                                 }
                                 else
                                 {
-                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false, false, trangthailat, diemGK, false);
                                     timerTC.Enabled = true;
+                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false, false, trangthailat, diemGK, false);
+
                                 }
 
                             }
@@ -453,13 +455,15 @@ namespace TC_Project
                                 var khamPha = _entities.ds_goicaudiscovery.FirstOrDefault(x => x.cauhoiid == cauhoiId && x.trangthai == true);
                                 if (!string.IsNullOrWhiteSpace(khamPha.noidungthisinh))
                                 {
-                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false,true, trangthailat, diemGK, true);
                                     timerTC.Enabled = false;
+
+                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false,true, trangthailat, diemGK, true);
                                 }
                                 else
                                 {
-                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false, false, trangthailat, diemGK, true);
                                     timerTC.Enabled = false;
+
+                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false, false, trangthailat, diemGK, true);
                                 }
 
                             }
@@ -557,11 +561,11 @@ namespace TC_Project
                             }
                             
 
-                            lblThoiGian.Visible = true;
+                            lblThoiGian.Visible = false;
                             hienthicauhoichinh(false);
-                            onoffKhanGia(true);
+                            onoffKhanGia(false);
                             onoffChinhPhuc(false);
-                            onoffTimeMath(true);
+                            onoffTimeMath(false);
                             onoffflowPanelSentences(false);
 
                             this.BackgroundImage = Image.FromFile(currentPath + "\\Resources\\group\\vd_tl.png");
@@ -569,7 +573,6 @@ namespace TC_Project
                             onOffUc(4, true);
                             //pnlNoiDung.Controls.Clear();
                             pnlDiemSo.Visible = false;
-                            lblThoiGian.Visible = false;
                             hienthicauhoichinh(false);
                         }
                         else
@@ -590,6 +593,9 @@ namespace TC_Project
                             bool da = false;
                             bool tt = false;
                             bool tt_file = false;
+                            onoffKhanGia(true);
+                            this.BackgroundImage = Image.FromFile(currentPath + "\\Resources\\group6\\tc_mc_vd.png");
+                            this.BackgroundImageLayout = ImageLayout.Stretch;
                             if (spl[5] == "start")
                             {
                                 timerTC.Enabled = true;
@@ -616,6 +622,7 @@ namespace TC_Project
 
                             if (spl[5] == "ready")
                             {
+
                                 timerTC.Enabled = false;
                                 tt = false;
                                 tt_file = true;
@@ -1363,7 +1370,7 @@ namespace TC_Project
             {
                 invisibleGui();
                 //lblthele.Text = "Thể lệ phần thi:";
-                lblthele.Text = "Question package!";
+                lblthele.Text = "Question packages!";
             }
             else
             {
@@ -1478,6 +1485,7 @@ namespace TC_Project
                 {
                     if (File.Exists(imagePath))
                     {
+
                         pBCauHoiChinhCP.BackgroundImage = Image.FromFile(imagePath);
                         pBCauHoiChinhCP.BackgroundImageLayout = ImageLayout.Stretch;
                         pBCauHoiChinhCP.Visible = true;
@@ -1495,6 +1503,12 @@ namespace TC_Project
                 {
                     lsCauHoiPhuCP = _entities.ds_goicaudiscovery.Where(x => x.cauhoichaid == cauHoiChinhCP.cauhoiid).ToList();
                     ds_goicaudiscovery cauHoiPhu = lsCauHoiPhuCP.FirstOrDefault(x => x.cauhoiid == cauhoiphuid);
+                    // >>>> Giải phóng ảnh cũ trước khi Load ảnh phụ
+                    if (pBCauHoiChinhCP.BackgroundImage != null)
+                    {
+                        pBCauHoiChinhCP.BackgroundImage.Dispose();
+                        pBCauHoiChinhCP.BackgroundImage = null;
+                    }
                     LoadAnhPhuDaLat(cauhoichude, thisinh.doiid);
 
                     if (diemGK)
@@ -1969,41 +1983,7 @@ namespace TC_Project
 
         #region ucKhamPhaChiaSe
 
-        //private void LoadAnhPhuDaLat(int cauchude, int doiid)
-        //{
-        //    var dsAnhDaLat = _entities.ds_goicaudiscovery
-        //        .Where(x => x.cauhoichaid == cauchude && x.doithiid == doiid && x.trangthailatAnhPhu == 1)
-        //        .ToList();
-
-        //    foreach (var cauHoiPhu in dsAnhDaLat)
-        //    {
-        //        string imagePath = Path.Combine(currentPath, "Resources", "pic", cauHoiPhu.noidungchude);
-        //        if (!File.Exists(imagePath)) continue;
-
-        //        Image img = Image.FromFile(imagePath);
-        //        PictureBox targetPictureBox = null;
-
-        //        switch (cauHoiPhu.vitri)
-        //        {
-        //            case 1: targetPictureBox = pbCau1; break;
-        //            case 2: targetPictureBox = pbCau2; break;
-        //            case 3: targetPictureBox = pbCau3; break;
-        //            case 4: targetPictureBox = pbCau4; break;
-        //            case 5: targetPictureBox = pbCau5; break;
-        //            case 6: targetPictureBox = pbCau6; break;
-        //        }
-
-        //        if (targetPictureBox != null)
-        //        {
-        //            targetPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-        //            targetPictureBox.Image = img;
-        //            targetPictureBox.Tag = img;
-
-        //            // Zoom ảnh ngay sau khi load ảnh này
-        //            FormZoomImage.ShowImage(img); // dùng ShowDialog nên sẽ chờ người dùng tắt form mới tới ảnh tiếp
-        //        }
-        //    }
-        //}
+        
 
         private void LoadAnhPhuDaLat(int cauchude, int doiid)
         {
@@ -2018,7 +1998,11 @@ namespace TC_Project
             pbCau4.Visible = false;
             pbCau5.Visible = false;
             pbCau6.Visible = false;
-
+            if (pBCauHoiChinhCP.BackgroundImage != null)
+            {
+                pBCauHoiChinhCP.BackgroundImage.Dispose();
+                pBCauHoiChinhCP.BackgroundImage = null;
+            }
             // Create a combined image for all secondary images
             if (dsAnhDaLat.Count > 0)
             {
@@ -2258,102 +2242,101 @@ namespace TC_Project
             if (cauhoiid == 0)
             {
                 VisibleGuiKP();
+                return;
+            }
+
+            EnabledGuiKP();
+            ds_cauhoithuthach khamPha = _entities.ds_cauhoithuthach.Find(cauhoiid);
+            if (khamPha == null) return;
+
+            //Hiển thị loại câu hỏi theo vị trí
+            if (khamPha.vitri == 1 || khamPha.vitri == 2)
+            {
+                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following words or phrases to make a complete sentence";
+
+            }
+            else if (khamPha.vitri == 3 || khamPha.vitri == 4)
+            {
+                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful conversation";
+
             }
             else
             {
-                EnabledGuiKP();
-                ds_cauhoithuthach khamPha = _entities.ds_cauhoithuthach.Find(cauhoiid);
-                if (khamPha != null)
-                {
-                    //Hiển thị loại câu hỏi theo vị trí
-                    if(khamPha.vitri == 1 || khamPha.vitri == 2)
-                    {
-                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following words or phrases to make a complete sentence";
+                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful paragraph";
 
-                    }
-                    else if(khamPha.vitri == 3 || khamPha.vitri == 4)
-                    {
-                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful conversation";
-
-                    }
-                    else
-                    {
-                        lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful paragraph";
-
-                    }
-                    // Xóa các Button cũ với hiệu ứng mượt
-                    flowPanelSentences.SuspendLayout();
-                    flowPanelSentences.Controls.Clear();
-
-                    // Cấu hình FlowLayoutPanel
-                    flowPanelSentences.FlowDirection = FlowDirection.TopDown;
-                    flowPanelSentences.WrapContents = false;
-                    flowPanelSentences.AutoScroll = true;
-                    flowPanelSentences.Padding = new Padding(10); // Thêm padding cho container
-
-                    // Tách nội dung thành các câu
-                    string[] sentences = khamPha.noidung.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-                    string[] answerLabels = { "A", "B", "C", "D", "E" };
-
-                    // Màu sắc và font chữ
-                    Color primaryColor = Color.FromArgb(52, 152, 219);
-                    Color hoverColor = Color.FromArgb(41, 128, 185); // Màu khi hover
-                    Color textColor = Color.White;
-                    Font btnFont = new Font("Segoe UI", 11, FontStyle.Bold); // Font đẹp hơn
-                    // Chiều rộng của Button
-                    int buttonWidth = flowPanelSentences.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
-
-                    foreach (int i in Enumerable.Range(0, sentences.Length))
-                    {
-                        string buttonText = answerLabels[i] + ". " + sentences[i].Trim();
-                        
-                        // Tạo Button tùy chỉnh
-                        Button btn = new Button
-                        {
-                            Text = buttonText,
-                            Font = btnFont,
-                            ForeColor = textColor,
-                            UseVisualStyleBackColor = false, // Ngăn WinForms dùng style hệ thống (màu đen mặc định)
-                            BackColor = primaryColor,
-                            FlatStyle = FlatStyle.Flat,
-                            Width = buttonWidth,
-                            Height = 60, // Chiều cao cố định ban đầu
-                            Margin = new Padding(0, 0, 0, 10), // Khoảng cách giữa các button
-                            TextAlign = ContentAlignment.MiddleLeft,
-                            Padding = new Padding(15, 5, 5, 5),
-                            Cursor = Cursors.Hand, // Hiệu ứng tay khi hover
-                            //Enabled = _isStart // Chỉ enable khi bắt đầu
-                        };
-
-                        // Thiết kế FlatStyle
-                        btn.FlatAppearance.BorderSize = 0;
-                        btn.FlatAppearance.MouseOverBackColor = hoverColor;
-                        btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(32, 102, 155);
-                        btn.ForeColor = textColor; // Đặt màu chữ
-                        // Thêm hiệu ứng bo góc
-                        btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn.Width, btn.Height, 15, 15));
-
-                        // Tính toán lại chiều cao dựa trên nội dung
-                        Size textSize = TextRenderer.MeasureText(btn.Text, btn.Font, new Size(btn.Width - btn.Padding.Horizontal, int.MaxValue));
-                        btn.Height = Math.Max(60, textSize.Height + btn.Padding.Vertical + 15);
-
-                        // Thêm hiệu ứng hover đơn giản
-                        btn.MouseEnter += (sender, e) => {
-                            Button b = (Button)sender;
-                            b.BackColor = hoverColor;
-                        };
-                        btn.MouseLeave += (sender, e) => {
-                            Button b = (Button)sender;
-                            b.BackColor = primaryColor;
-                        };
-
-                        flowPanelSentences.Controls.Add(btn);
-                    }
-                    flowPanelSentences.ResumeLayout();
-                }
             }
 
+            // Tối ưu hiển thị, tránh nháy bằng cách bật DoubleBuffered
+            EnableDoubleBuffering(flowPanelSentences);
+
+            flowPanelSentences.SuspendLayout();
+            flowPanelSentences.Controls.Clear();
+
+            flowPanelSentences.FlowDirection = FlowDirection.TopDown;
+            flowPanelSentences.WrapContents = false;
+            flowPanelSentences.AutoScroll = true;
+            flowPanelSentences.Padding = new Padding(10);
+
+            string[] sentences = khamPha.noidung.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] answerLabels = { "A", "B", "C", "D", "E" };
+
+            Color primaryColor = Color.FromArgb(52, 152, 219);
+            Color hoverColor = Color.FromArgb(41, 128, 185);
+            Font btnFont = new Font("Segoe UI", 11, FontStyle.Bold);
+            Color textColor = Color.White;
+            int buttonWidth = flowPanelSentences.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
+
+            for (int i = 0; i < sentences.Length && i < answerLabels.Length; i++)
+            {
+                string text = answerLabels[i] + ". " + sentences[i].Trim();
+
+                Button btn = new Button
+                {
+                    Text = text,
+                    Font = btnFont,
+                    ForeColor = textColor,
+                    BackColor = primaryColor,
+                    FlatStyle = FlatStyle.Flat,
+                    Width = buttonWidth,
+                    Height = 60, // Base height
+                    Margin = new Padding(0, 0, 0, 10),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Padding = new Padding(15, 10, 10, 10),
+                    Cursor = Cursors.Hand,
+                    UseVisualStyleBackColor = false,
+                    AutoSize = false, // QUAN TRỌNG: Không dùng AutoSize để tự điều chỉnh chiều ngang
+                };
+
+                // Tính toán chiều cao theo nội dung (nếu có dòng dài)
+                Size textSize = TextRenderer.MeasureText(btn.Text, btn.Font, new Size(buttonWidth - btn.Padding.Horizontal, int.MaxValue), TextFormatFlags.WordBreak);
+                btn.Height = Math.Max(60, textSize.Height + btn.Padding.Vertical + 10);
+
+                // Tối ưu FlatAppearance
+                btn.FlatAppearance.BorderSize = 0;
+                btn.FlatAppearance.MouseOverBackColor = hoverColor;
+                btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(32, 102, 155);
+
+                // Bo góc
+                btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn.Width, btn.Height, 15, 15));
+
+                // Hover effect
+                btn.MouseEnter += (s, e) => btn.BackColor = hoverColor;
+                btn.MouseLeave += (s, e) => btn.BackColor = primaryColor;
+
+                flowPanelSentences.Controls.Add(btn);
+            }
+
+            flowPanelSentences.ResumeLayout();
         }
+        private void EnableDoubleBuffering(Control control)
+        {
+            typeof(Control).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.SetProperty |
+                System.Reflection.BindingFlags.Instance |
+                System.Reflection.BindingFlags.NonPublic,
+                null, control, new object[] { true });
+        }
+
         // Hàm tạo region bo góc (thêm vào class)
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);

@@ -53,7 +53,7 @@ namespace TC_Project
                 lblCauHoi.Visible = true;
                 lblDapAn.Visible = false;
                 pbDA.Visible = false;
-                lblCauHoi.Text = "This section will have 4 questions for audiences.\nQuestions will be related to the program sponsor or other content.";
+                lblCauHoi.Text = "• This section will have 4 questions.\n• The questions will be related to the program sponsors or other relevant content.";
 
             }
             else
@@ -62,7 +62,7 @@ namespace TC_Project
 
                 int idCuocThiHienTai = cuocThiHienTai.cuocthiid;
                 ds_phanthikhangia dskg = _entities.ds_phanthikhangia.Find(_cauhoiid);
-                labelCauHoi.Text = "Questions number " + dskg.vitri + ":";
+                labelCauHoi.Text = "Questions " + dskg.vitri + ":";
                 lblCauHoi.Text = dskg.noidungcauhoi.ToString();
                 lblCauHoi.Visible = true;
                 labelCauHoi.Visible = true;
