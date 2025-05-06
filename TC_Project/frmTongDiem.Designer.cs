@@ -201,7 +201,7 @@ namespace TC_Project
             this.lblTS1.ForeColor = System.Drawing.Color.Yellow;
             this.lblTS1.Location = new System.Drawing.Point(363, 180);
             this.lblTS1.Name = "lblTS1";
-            this.lblTS1.Size = new System.Drawing.Size(190, 78);
+            this.lblTS1.Size = new System.Drawing.Size(195, 78);
             this.lblTS1.TabIndex = 86;
             this.lblTS1.Text = "Nguyễn Hoàng";
             this.lblTS1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,7 +213,7 @@ namespace TC_Project
             this.lblTS2.ForeColor = System.Drawing.Color.Yellow;
             this.lblTS2.Location = new System.Drawing.Point(591, 180);
             this.lblTS2.Name = "lblTS2";
-            this.lblTS2.Size = new System.Drawing.Size(189, 78);
+            this.lblTS2.Size = new System.Drawing.Size(195, 78);
             this.lblTS2.TabIndex = 87;
             this.lblTS2.Text = "Nguyễn Hoàng";
             this.lblTS2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,7 +225,7 @@ namespace TC_Project
             this.lblTS3.ForeColor = System.Drawing.Color.Yellow;
             this.lblTS3.Location = new System.Drawing.Point(821, 180);
             this.lblTS3.Name = "lblTS3";
-            this.lblTS3.Size = new System.Drawing.Size(189, 78);
+            this.lblTS3.Size = new System.Drawing.Size(195, 78);
             this.lblTS3.TabIndex = 88;
             this.lblTS3.Text = "Nguyễn Hoàng";
             this.lblTS3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,7 +237,7 @@ namespace TC_Project
             this.lblTS4.ForeColor = System.Drawing.Color.Yellow;
             this.lblTS4.Location = new System.Drawing.Point(1049, 180);
             this.lblTS4.Name = "lblTS4";
-            this.lblTS4.Size = new System.Drawing.Size(189, 78);
+            this.lblTS4.Size = new System.Drawing.Size(195, 78);
             this.lblTS4.TabIndex = 89;
             this.lblTS4.Text = "Nguyễn Hoàng";
             this.lblTS4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

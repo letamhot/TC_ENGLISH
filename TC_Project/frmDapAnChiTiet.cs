@@ -53,5 +53,13 @@ namespace TC_Project
             this.Close();
         }
 
+        private void fmHienThiChiTiet_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+
+            }
+        }
     }
 }

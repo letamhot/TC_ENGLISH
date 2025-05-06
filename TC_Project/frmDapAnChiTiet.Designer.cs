@@ -101,6 +101,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fmHienThiChiTiet";
             this.Text = "Đáp án chi tiết";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fmHienThiChiTiet_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
             this.ResumeLayout(false);
