@@ -66,7 +66,7 @@
             this.labelDapAnCT.BackColor = System.Drawing.Color.Transparent;
             this.labelDapAnCT.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDapAnCT.ForeColor = System.Drawing.Color.Black;
-            this.labelDapAnCT.Location = new System.Drawing.Point(215, 250);
+            this.labelDapAnCT.Location = new System.Drawing.Point(207, 223);
             this.labelDapAnCT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDapAnCT.Name = "labelDapAnCT";
             this.labelDapAnCT.Size = new System.Drawing.Size(877, 46);
@@ -78,9 +78,9 @@
             this.txtDapAnCT.BackColor = System.Drawing.Color.Transparent;
             this.txtDapAnCT.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDapAnCT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDapAnCT.Location = new System.Drawing.Point(207, 310);
+            this.txtDapAnCT.Location = new System.Drawing.Point(207, 283);
             this.txtDapAnCT.Name = "txtDapAnCT";
-            this.txtDapAnCT.Size = new System.Drawing.Size(951, 379);
+            this.txtDapAnCT.Size = new System.Drawing.Size(951, 423);
             this.txtDapAnCT.TabIndex = 88;
             this.txtDapAnCT.Text = resources.GetString("txtDapAnCT.Text");
             // 
