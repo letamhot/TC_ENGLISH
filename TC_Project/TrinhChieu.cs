@@ -239,10 +239,7 @@ namespace TC_Project
                     {
                         layCuocThiHienTai();
                         // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmTongDiem"] != null)
-                        {
-                            Application.OpenForms["frmTongDiem"].Close();
-                        }
+                        CloseFormsByName("frmTongDiem");
                         lblThoiGian.Visible = true;
                         onoffKhanGia(true);
                         hienthicauhoichinh(false);
@@ -283,15 +280,17 @@ namespace TC_Project
                             {
 
                                 // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                if (Application.OpenForms["frmDapAnKP"] != null)
-                                {
-                                    Application.OpenForms["frmDapAnKP"].Close();
-                                }
-                                // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                if (Application.OpenForms["frmDapAnKP"] != null)
-                                {
-                                    Application.OpenForms["frmDapAnKP"].Close();
-                                }
+                                //if (Application.OpenForms["frmDapAnKP"] != null)
+                                //{
+                                //    Application.OpenForms["frmDapAnKP"].Close();
+                                //}
+                                //// Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
+                                //if (Application.OpenForms["frmDapAnKP"] != null)
+                                //{
+                                //    Application.OpenForms["frmDapAnKP"].Close();
+                                //}
+                                CloseFormsByName("frmDapAnKP");
+
                                 //frmTongDiem = new frmTongDiem();
                                 //this.Hide();
                                 //frmDapAnKP = new frmDapAnKP();
@@ -321,10 +320,12 @@ namespace TC_Project
                             if (spl[4] == "stop")
                             {
                                 // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                if (Application.OpenForms["fmHienThiChiTiet"] != null)
-                                {
-                                    Application.OpenForms["fmHienThiChiTiet"].Close();
-                                }
+                                //if (Application.OpenForms["fmHienThiChiTiet"] != null)
+                                //{
+                                //    Application.OpenForms["fmHienThiChiTiet"].Close();
+                                //}
+                                CloseFormsByName("fmHienThiChiTiet");
+
                                 frmDapAnKP = new frmDapAnKP(sock, int.Parse(spl[3]), false);
                                 frmDapAnKP.Show();
                                 frmDapAnKP.Focus();
@@ -335,10 +336,12 @@ namespace TC_Project
                             if (spl[4] == "hienthidiemKP")
                             {
                                 // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                if (Application.OpenForms["fmHienThiChiTiet"] != null)
-                                {
-                                    Application.OpenForms["fmHienThiChiTiet"].Close();
-                                }
+                                //if (Application.OpenForms["fmHienThiChiTiet"] != null)
+                                //{
+                                //    Application.OpenForms["fmHienThiChiTiet"].Close();
+                                //}
+                                CloseFormsByName("fmHienThiChiTiet");
+
                                 frmDapAnKP = new frmDapAnKP(sock, int.Parse(spl[3]), true);
                                 frmDapAnKP.Show();
                                 frmDapAnKP.Focus();
@@ -364,10 +367,8 @@ namespace TC_Project
                     {
                         layCuocThiHienTai();
                         // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmTongDiem"] != null)
-                        {
-                            Application.OpenForms["frmTongDiem"].Close();
-                        }
+                        CloseFormsByName("frmTongDiem");
+
                         onoffKhanGia(true);
                         onoffflowPanelSentences(false);
                         frmKhamGia frmKhamGia;
@@ -403,10 +404,9 @@ namespace TC_Project
                             if (spl[5] == "ready")
                             {
                                 // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                if (Application.OpenForms["FormZoomImage"] != null)
-                                {
-                                    Application.OpenForms["FormZoomImage"].Close();
-                                }
+                                
+                                CloseFormsByName("FormZoomImage");
+
                                 timerTC.Enabled = false;
                                 thoiGianConLai = 180;
                                 lblThoiGian.Text = thoiGianConLai.ToString();
@@ -447,10 +447,8 @@ namespace TC_Project
                             if (spl[5] == "stopTime")
                             {
                                 // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                if (Application.OpenForms["FormZoomImage"] != null)
-                                {
-                                    Application.OpenForms["FormZoomImage"].Close();
-                                }
+                                CloseFormsByName("FormZoomImage");
+
                                 int cauhoiId = Convert.ToInt32(spl[3]);
                                 var khamPha = _entities.ds_goicaudiscovery.FirstOrDefault(x => x.cauhoiid == cauhoiId && x.trangthai == true);
                                 if (!string.IsNullOrWhiteSpace(khamPha.noidungthisinh))
@@ -510,56 +508,9 @@ namespace TC_Project
                         if (spl[5] == "0")
                         {
                             // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmTongDiem"] != null)
-                            {
-                                Application.OpenForms["frmTongDiem"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
-                            // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmKhamGia"] != null)
-                            {
-                                Application.OpenForms["frmKhamGia"].Close();
-                            }
                             
+                            CloseFormsByName("frmTongDiem", "frmKhamGia");
+
 
                             lblThoiGian.Visible = false;
                             hienthicauhoichinh(false);
@@ -678,16 +629,10 @@ namespace TC_Project
                     }
                     if (spl[2] == "playkhangia")
                     {
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmDapAnKP"] != null)
-                        {
-                            Application.OpenForms["frmDapAnKP"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmDapAnKP"] != null)
-                        {
-                            Application.OpenForms["frmDapAnKP"].Close();
-                        }
+                        
+                        CloseFormsByName("frmDapAnKP");
+
+
                         frmKhamGia frmKhamGia;
                         /*this.BackgroundImage = Image.FromFile(currentPath + "\\Resources\\group6\\tc_mc_kg.jpg");
                         this.BackgroundImageLayout = ImageLayout.Stretch;*/
@@ -752,66 +697,7 @@ namespace TC_Project
                     }
                     if (spl[2] == "tongdiem")
                     {
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmtraloi"] != null)
-                        {
-                            Application.OpenForms["frmtraloi"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmDapAnKP"] != null)
-                        {
-                            Application.OpenForms["frmDapAnKP"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmDapAnKP"] != null)
-                        {
-                            Application.OpenForms["frmDapAnKP"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
+                        CloseFormsByName("frmDapAnKP", "frmtraloi", "frmKhamGia");
                         frmTongDiem = new frmTongDiem();
                         frmTongDiem.Show();
                         pnlDiemSo.Visible = false;
@@ -825,56 +711,9 @@ namespace TC_Project
                     frmTongDiem frmTongDiem;
                     if (spl[2] == "tongdiem")
                     {
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmtraloi"] != null)
-                        {
-                            Application.OpenForms["frmtraloi"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
-                        // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        if (Application.OpenForms["frmKhamGia"] != null)
-                        {
-                            Application.OpenForms["frmKhamGia"].Close();
-                        }
+                        CloseFormsByName("frmDapAnKP", "frmtraloi", "frmKhamGia");
+
+                        
                         frmTongDiem = new frmTongDiem();
                         frmTongDiem.Show();
                         //pnlDiemSo.Visible = false;
@@ -947,10 +786,12 @@ namespace TC_Project
                         else if (spl[5] == "ready")
                         {
                             // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            if (Application.OpenForms["frmtraloi"] != null)
-                            {
-                                Application.OpenForms["frmtraloi"].Close();
-                            }
+                            //if (Application.OpenForms["frmtraloi"] != null)
+                            //{
+                            //    Application.OpenForms["frmtraloi"].Close();
+                            //}
+                            CloseFormsByName("frmtraloi");
+
                             if (int.Parse(spl[4]) > 0)
                             {
 
@@ -1064,6 +905,16 @@ namespace TC_Project
                 }
             }
 
+        }
+        public void CloseFormsByName(params string[] formNames)
+        {
+            foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (formNames.Contains(form.Name))
+                {
+                    form.Close();
+                }
+            }
         }
 
         private void SendEvent(string str)
@@ -1466,8 +1317,10 @@ namespace TC_Project
                 {
                     if (File.Exists(videoPath))
                     {
+                        axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
                         axWindowsMediaPlayer1.Visible = true;
+                        axWindowsMediaPlayer1.settings.volume = 100;
 
                         if (start)
                             axWindowsMediaPlayer1.Ctlcontrols.play();
@@ -1545,8 +1398,10 @@ namespace TC_Project
                 {
                     if (File.Exists(videoPath))
                     {
+                        axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
                         axWindowsMediaPlayer1.Visible = true;
+                        axWindowsMediaPlayer1.settings.volume = 100;
 
                         if (isReadyOrOther)
                             axWindowsMediaPlayer1.Ctlcontrols.stop();
@@ -1722,11 +1577,25 @@ namespace TC_Project
 
                                         if (isReady)
                                         {
+                                            axWinCauHoiHinhAnh.uiMode = "none";
                                             axWinCauHoiHinhAnh.Visible = true;
-                                            axWinCauHoiHinhAnh.URL = currentPath + "\\Resources\\Video\\" + vd.urlhinhanh;
+                                            axWinCauHoiHinhAnh.URL = Path.Combine(currentPath, "Resources", "Video", vd.urlhinhanh);
                                             axWinCauHoiHinhAnh.settings.volume = 100;
                                             axWinCauHoiHinhAnh.Ctlcontrols.play();
+
+                                            // Bắt sự kiện khi MediaPlayer đã sẵn sàng để phát
+                                            axWinCauHoiHinhAnh.PlayStateChange += (s, e) =>
+                                            {
+                                                // 3: Playing
+                                                if (e.newState == 3)
+                                                {
+                                                    Thread.Sleep(1500);
+
+                                                    axWinCauHoiHinhAnh.fullScreen = true;
+                                                }
+                                            };
                                         }
+
                                         if (isStart)
                                         {
                                             if (da)
@@ -1881,10 +1750,25 @@ namespace TC_Project
                                 {
                                     if (isReady)
                                     {
+                                        axWinCauHoiHinhAnh.uiMode = "none";
                                         axWinCauHoiHinhAnh.Visible = true;
-                                        axWinCauHoiHinhAnh.URL = currentPath + "\\Resources\\Video\\" + vd.urlhinhanh;
+                                        axWinCauHoiHinhAnh.URL = Path.Combine(currentPath, "Resources", "Video", vd.urlhinhanh);
+                                        axWinCauHoiHinhAnh.settings.volume = 100;
                                         axWinCauHoiHinhAnh.Ctlcontrols.play();
+
+                                        // Bắt sự kiện khi MediaPlayer đã sẵn sàng để phát
+                                        axWinCauHoiHinhAnh.PlayStateChange += (s, e) =>
+                                        {
+                                            // 3: Playing
+                                            if (e.newState == 3)
+                                            {
+                                                Thread.Sleep(1500);
+
+                                                axWinCauHoiHinhAnh.fullScreen = true;
+                                            }
+                                        };
                                     }
+
                                     if (isStart)
                                     {
                                         pbImage.Visible = false;
