@@ -933,15 +933,10 @@ namespace TC_Project
                         {
                             ds_doi teamplaying = _entities.ds_doi.Find(int.Parse(spl[0]));
                             ds_doi teamnext = _entities.ds_doi.Where(x => x.vitridoi == teamplaying.vitridoi + 1).FirstOrDefault();
-                            if (teamnext != null)
-                            {
-                                lblthele.Text = "Candidate " + teamplaying.tennguoichoi.ToUpper() + " has completed the test \nCandidate " + teamnext.tennguoichoi.ToUpper() + " is preparing";
-                            }
-                            else
-                            {
-                                lblthele.Text = "Candidate " + teamplaying.tennguoichoi.ToUpper() + " has completed the test";
-                            }
-
+                            lblthele.Text = teamnext != null
+                            ? $"Congratulations to candidate {teamplaying.tennguoichoi.ToString().ToUpper()} completed the Warm-up section\nCandidate {teamnext.tennguoichoi.ToString().ToUpper()} preparing for the section"
+                            : $"Congratulations to candidate {teamplaying.tennguoichoi.ToString().ToUpper()} has completed the Warm-up section";
+                            
                             thoiGianConLai = 60;
                             timerTC.Enabled = false;
                             frmtraloi = new frmtraloi(sock, int.Parse(spl[0]), int.Parse(spl[3]), int.Parse(spl[4]), ttGoiKD, false);
@@ -1383,8 +1378,11 @@ namespace TC_Project
                     {
                         lblthele.Text = "Candidate " + teamplaying.tennguoichoi.ToUpper() + " is doing the section";
                     }
-                    lblNoiDungCauHoi.Text = _entities.ds_goicauhoikhoidong.Find(cauhoiid).noidungcauhoi;
-                    labelNoiDungCauHoi.Text = "Question " + _entities.ds_goicauhoikhoidong.Find(cauhoiid).vitri + ":";
+                    ds_goicauhoikhoidong cauhoi = _entities.ds_goicauhoikhoidong.Find(cauhoiid);
+                    _entities.Entry(cauhoi).Reload(); // ⚠️ Nạp lại từ DB
+
+                    lblNoiDungCauHoi.Text = cauhoi.noidungcauhoi;
+                    labelNoiDungCauHoi.Text = "Question " + cauhoi.vitri + ":";
                 }
                 else
                 {
@@ -1604,6 +1602,7 @@ namespace TC_Project
                 if (cauhoiid > 0)
                 {
                     ds_goicauhoishining vd = _entities.ds_goicauhoishining.Find(cauhoiid);
+                    _entities.Entry(vd).Reload(); // ⚠️ Nạp lại từ DB
 
                     displaytoasang(cauhoiid, (int)vd.vitri, x2);
                     loadNutDangChon(cauhoiid, x2);
@@ -2009,6 +2008,8 @@ namespace TC_Project
 
                 for (int i = 0; i < dsAnhDaLat.Count; i++)
                 {
+                    _entities.Entry(dsAnhDaLat[i]).Reload(); // ⚠️ Nạp lại từ DB
+
                     string imagePath = Path.Combine(currentPath, "Resources", "pic", dsAnhDaLat[i].noidungchude);
                     if (File.Exists(imagePath))
                     {
@@ -2248,6 +2249,7 @@ namespace TC_Project
             EnabledGuiKP();
             ds_cauhoithuthach khamPha = _entities.ds_cauhoithuthach.Find(cauhoiid);
             if (khamPha == null) return;
+            _entities.Entry(khamPha).Reload(); // ⚠️ Nạp lại từ DB
 
             //Hiển thị loại câu hỏi theo vị trí
             if (khamPha.vitri == 1 || khamPha.vitri == 2)

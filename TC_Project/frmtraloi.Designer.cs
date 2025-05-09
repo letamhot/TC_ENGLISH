@@ -66,9 +66,9 @@ namespace TC_Project
             this.pbMini.BackColor = System.Drawing.Color.Transparent;
             this.pbMini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbMini.BackgroundImage")));
             this.pbMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbMini.Location = new System.Drawing.Point(1232, -15);
+            this.pbMini.Location = new System.Drawing.Point(1313, 8);
             this.pbMini.Name = "pbMini";
-            this.pbMini.Size = new System.Drawing.Size(10, 17);
+            this.pbMini.Size = new System.Drawing.Size(19, 17);
             this.pbMini.TabIndex = 82;
             this.pbMini.TabStop = false;
             this.pbMini.Click += new System.EventHandler(this.pbMini_Click);
@@ -78,9 +78,9 @@ namespace TC_Project
             this.pbClose.BackColor = System.Drawing.Color.Transparent;
             this.pbClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbClose.BackgroundImage")));
             this.pbClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbClose.Location = new System.Drawing.Point(1342, 36);
+            this.pbClose.Location = new System.Drawing.Point(1338, 8);
             this.pbClose.Name = "pbClose";
-            this.pbClose.Size = new System.Drawing.Size(10, 26);
+            this.pbClose.Size = new System.Drawing.Size(22, 17);
             this.pbClose.TabIndex = 93;
             this.pbClose.TabStop = false;
             this.pbClose.Click += new System.EventHandler(this.pbClose_Click);

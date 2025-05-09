@@ -58,7 +58,6 @@
             this.lblCauhoi = new System.Windows.Forms.Label();
             this.lblCauHoiTT = new System.Windows.Forms.Label();
             this.pnlChinhPhuc = new System.Windows.Forms.Panel();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlKhungTranh = new System.Windows.Forms.Panel();
             this.pBCauHoiChinhCP = new System.Windows.Forms.Panel();
             this.pbCau2 = new System.Windows.Forms.PictureBox();
@@ -80,7 +79,6 @@
             this.pbGoi2VD = new System.Windows.Forms.PictureBox();
             this.pbGoi4VD = new System.Windows.Forms.PictureBox();
             this.lblTheLeVD = new System.Windows.Forms.Label();
-            this.axWinCauHoiHinhAnh = new AxWMPLib.AxWindowsMediaPlayer();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.lblNoiDungCauHoiVD = new System.Windows.Forms.Label();
             this.lblThoiGian = new System.Windows.Forms.Label();
@@ -93,6 +91,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlDiemSoCP = new System.Windows.Forms.Panel();
+            this.axWinCauHoiHinhAnh = new AxWMPLib.AxWindowsMediaPlayer();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMini)).BeginInit();
             this.pnlDiemSo.SuspendLayout();
@@ -105,7 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbGoi1)).BeginInit();
             this.pnlKhamPha.SuspendLayout();
             this.pnlChinhPhuc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.pnlKhungTranh.SuspendLayout();
             this.pBCauHoiChinhCP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCau2)).BeginInit();
@@ -122,9 +121,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbGoi5VD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGoi2VD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGoi4VD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWinCauHoiHinhAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.pnlDiemSoCP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWinCauHoiHinhAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // pbClose
@@ -308,9 +308,9 @@
             // lblthele
             // 
             this.lblthele.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblthele.Location = new System.Drawing.Point(23, 8);
+            this.lblthele.Location = new System.Drawing.Point(12, 8);
             this.lblthele.Name = "lblthele";
-            this.lblthele.Size = new System.Drawing.Size(687, 94);
+            this.lblthele.Size = new System.Drawing.Size(984, 102);
             this.lblthele.TabIndex = 29;
             this.lblthele.Text = "Thể lệ cuộc thi:";
             this.lblthele.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -426,15 +426,6 @@
             this.pnlChinhPhuc.Size = new System.Drawing.Size(1012, 558);
             this.pnlChinhPhuc.TabIndex = 84;
             this.pnlChinhPhuc.Visible = false;
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(194, 143);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(664, 385);
-            this.axWindowsMediaPlayer1.TabIndex = 75;
             // 
             // pnlKhungTranh
             // 
@@ -673,16 +664,6 @@
             this.lblTheLeVD.TabIndex = 70;
             this.lblTheLeVD.Text = "Thể lệ phần thi:";
             // 
-            // axWinCauHoiHinhAnh
-            // 
-            this.axWinCauHoiHinhAnh.Enabled = true;
-            this.axWinCauHoiHinhAnh.Location = new System.Drawing.Point(131, 160);
-            this.axWinCauHoiHinhAnh.Name = "axWinCauHoiHinhAnh";
-            this.axWinCauHoiHinhAnh.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWinCauHoiHinhAnh.OcxState")));
-            this.axWinCauHoiHinhAnh.Size = new System.Drawing.Size(389, 247);
-            this.axWinCauHoiHinhAnh.TabIndex = 62;
-            this.axWinCauHoiHinhAnh.Visible = false;
-            // 
             // pbImage
             // 
             this.pbImage.BackColor = System.Drawing.Color.Transparent;
@@ -815,6 +796,25 @@
             this.pnlDiemSoCP.Size = new System.Drawing.Size(285, 189);
             this.pnlDiemSoCP.TabIndex = 79;
             // 
+            // axWinCauHoiHinhAnh
+            // 
+            this.axWinCauHoiHinhAnh.Enabled = true;
+            this.axWinCauHoiHinhAnh.Location = new System.Drawing.Point(131, 160);
+            this.axWinCauHoiHinhAnh.Name = "axWinCauHoiHinhAnh";
+            this.axWinCauHoiHinhAnh.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWinCauHoiHinhAnh.OcxState")));
+            this.axWinCauHoiHinhAnh.Size = new System.Drawing.Size(389, 247);
+            this.axWinCauHoiHinhAnh.TabIndex = 62;
+            this.axWinCauHoiHinhAnh.Visible = false;
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(194, 143);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(664, 385);
+            this.axWindowsMediaPlayer1.TabIndex = 75;
+            // 
             // TrinhChieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -853,7 +853,6 @@
             this.pnlKhamPha.ResumeLayout(false);
             this.pnlChinhPhuc.ResumeLayout(false);
             this.pnlChinhPhuc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.pnlKhungTranh.ResumeLayout(false);
             this.pBCauHoiChinhCP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCau2)).EndInit();
@@ -871,10 +870,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbGoi5VD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGoi2VD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGoi4VD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWinCauHoiHinhAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.pnlDiemSoCP.ResumeLayout(false);
             this.pnlDiemSoCP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWinCauHoiHinhAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
