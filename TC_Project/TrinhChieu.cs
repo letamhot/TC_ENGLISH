@@ -289,7 +289,7 @@ namespace TC_Project
                                 //{
                                 //    Application.OpenForms["frmDapAnKP"].Close();
                                 //}
-                                CloseFormsByName("frmDapAnKP");
+                                CloseFormsByName("frmDapAnKP", "frmKhamGia");
 
                                 //frmTongDiem = new frmTongDiem();
                                 //this.Hide();

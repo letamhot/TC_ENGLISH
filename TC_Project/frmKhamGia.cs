@@ -62,6 +62,8 @@ namespace TC_Project
 
                 int idCuocThiHienTai = cuocThiHienTai.cuocthiid;
                 ds_phanthikhangia dskg = _entities.ds_phanthikhangia.Find(_cauhoiid);
+                _entities.Entry(dskg).Reload(); // ⚠️ Nạp lại từ DB
+
                 labelCauHoi.Text = "Questions " + dskg.vitri + ":";
                 lblCauHoi.Text = dskg.noidungcauhoi.ToString();
                 lblCauHoi.Visible = true;
