@@ -214,6 +214,8 @@ namespace TC_Project
                     bool dapan = false;
                     if (spl[2] == "playkhoidong")
                     {
+                        CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
+
                         layCuocThiHienTai();
                         lblThoiGian.Enabled = true;
                         onoffKhanGia(true);
@@ -239,7 +241,7 @@ namespace TC_Project
                     {
                         layCuocThiHienTai();
                         // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        CloseFormsByName("frmTongDiem");
+                        CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
                         lblThoiGian.Visible = true;
                         onoffKhanGia(true);
                         hienthicauhoichinh(false);
@@ -367,7 +369,7 @@ namespace TC_Project
                     {
                         layCuocThiHienTai();
                         // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                        CloseFormsByName("frmTongDiem");
+                        CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
 
                         onoffKhanGia(true);
                         onoffflowPanelSentences(false);
@@ -509,7 +511,7 @@ namespace TC_Project
                         {
                             // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
                             
-                            CloseFormsByName("frmTongDiem", "frmKhamGia");
+                            CloseFormsByName("frmTongDiem", "frmKhamGia","frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
 
 
                             lblThoiGian.Visible = false;
@@ -593,7 +595,6 @@ namespace TC_Project
                                     this.BackgroundImage = Image.FromFile(currentPath + "\\Resources\\group6\\tc_mc_vd.png");
                                     this.BackgroundImageLayout = ImageLayout.Stretch;
                                     processToaSang(int.Parse(spl[0]), int.Parse(spl[4]), tt, false, false, true, false, true);
-
                                 }
 
                             }
@@ -1317,6 +1318,7 @@ namespace TC_Project
                 {
                     if (File.Exists(videoPath))
                     {
+                        pBCauHoiChinhCP.Visible = false;
                         axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
                         axWindowsMediaPlayer1.Visible = true;
@@ -1398,6 +1400,7 @@ namespace TC_Project
                 {
                     if (File.Exists(videoPath))
                     {
+                        pBCauHoiChinhCP.Visible = false;
                         axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
                         axWindowsMediaPlayer1.Visible = true;
