@@ -13,6 +13,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -1318,6 +1319,8 @@ namespace TC_Project
                 {
                     if (File.Exists(videoPath))
                     {
+                        pnlKhungTranh.Visible = false;
+
                         pBCauHoiChinhCP.Visible = false;
                         axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
@@ -1343,6 +1346,7 @@ namespace TC_Project
                         pBCauHoiChinhCP.BackgroundImageLayout = ImageLayout.Stretch;
                         pBCauHoiChinhCP.Visible = true;
                         axWindowsMediaPlayer1.Visible = false;
+                        pnlKhungTranh.Visible = true;
 
                         axWindowsMediaPlayer1.Ctlcontrols.stop();
                     }
@@ -1392,7 +1396,6 @@ namespace TC_Project
                 string imagePath = Path.Combine(currentPath, "Resources", "pic", fileName);
                 string videoPath = Path.Combine(currentPath, "Resources", "Video", fileName);
                 string extension = Path.GetExtension(fileName).ToLower();
-
                 pBCauHoiChinhCP.Visible = false;
                 axWindowsMediaPlayer1.Visible = false;
 
@@ -1401,6 +1404,7 @@ namespace TC_Project
                     if (File.Exists(videoPath))
                     {
                         pBCauHoiChinhCP.Visible = false;
+                        pnlKhungTranh.Visible = false;
                         axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
                         axWindowsMediaPlayer1.Visible = true;
@@ -1428,6 +1432,7 @@ namespace TC_Project
                         pBCauHoiChinhCP.BackgroundImageLayout = ImageLayout.Stretch;
                         pBCauHoiChinhCP.Visible = true;
                         axWindowsMediaPlayer1.Visible = false;
+                        pnlKhungTranh.Visible = true;
 
                         axWindowsMediaPlayer1.Ctlcontrols.stop();
                     }
