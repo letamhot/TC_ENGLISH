@@ -52,11 +52,14 @@ namespace TC_Project
         SqlDataAccess sqlObject = new SqlDataAccess();
         private Image imageChinhPhucChinh;
         private FormZoomImage _currentZoomForm;
+        private Dictionary<(int cauhoichaid, int doiid, int vitri), Image> _anhPhuDaLatCache
+ = new Dictionary<(int cauhoichaid, int doiid, int vitri), Image>();
+
 
         public TrinhChieu()
         {
             InitializeComponent();
-            
+
         }
 
         public TrinhChieu(int doiId)
@@ -64,23 +67,50 @@ namespace TC_Project
             id = doiId;
             ds_Doi = _entities.ds_doi.Find(id);
             InitializeComponent();
-            string sql = "SELECT noidungchude FROM ds_goicaudiscovery WHERE trangthai = 1 AND vitri = 0";
+            string sql = @"
+                            SELECT cauhoichaid, doithiid, noidungchude, vitri
+                            FROM ds_goicaudiscovery
+                            WHERE trangthailatAnhPhu = 0 AND cauhoichaid IS NOT NULL AND noidungchude NOT LIKE '%.mp4'";
             string urlhinhanh = "";
 
             using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["QMDS_Connection"].ConnectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand(sql, connection))
+                using (var reader = command.ExecuteReader())
                 {
-                    urlhinhanh = (string)command.ExecuteScalar();
+                    while (reader.Read())
+                    {
+                        int cauhoiId = reader.GetInt32(0);
+                        int doithiId = reader.GetInt32(1);
+                        string filename = reader.GetString(2);
+                        int vitri = reader.GetInt32(3);
+                        string fullPath = Path.Combine(currentPath, "Resources", "pic", filename);
+
+                        if (File.Exists(fullPath))
+                        {
+                            Image img = Image.FromFile(fullPath);
+                            var key = (cauhoiId, doithiId, vitri);
+                            if (!_anhPhuDaLatCache.ContainsKey(key))
+                            {
+                                _anhPhuDaLatCache[key] = img;
+
+                                // Gắn vào PictureBox ẩn (ảnh phụ) nằm trong pBCauHoiChinhCP
+                                PictureBox pb = new PictureBox
+                                {
+                                    Size = pBCauHoiChinhCP.ClientSize,
+                                    Location = new Point(0, 0), // nằm bên trong pBCauHoiChinhCP
+                                    BackgroundImage = img,
+                                    BackgroundImageLayout = ImageLayout.Stretch,
+                                    Visible = false,
+                                    Parent = pBCauHoiChinhCP // Quan trọng: gắn vào panel chứa ảnh chính
+                                };
+                                pb.Name = $"pb_anhphu_{cauhoiId}_{doithiId}_{vitri}";
+                                pBCauHoiChinhCP.Controls.Add(pb);
+                            }
+                        }
+                    }
                 }
-            }
-
-            if (!string.IsNullOrEmpty(urlhinhanh))
-            {
-                imageChinhPhucChinh = Image.FromFile(currentPath + "\\Resources\\pic\\" + urlhinhanh);
-                this.DoubleBuffered = true;
-
             }
             connecServer();
             addMessage = new AddMessage(OnAddMessage);
@@ -334,7 +364,7 @@ namespace TC_Project
                                 frmDapAnKP.Focus();
                                 timerTC.Enabled = false;
                                 thoiGianConLai = 30;
-                                lblThoiGian.Text = thoiGianConLai.ToString() ;
+                                lblThoiGian.Text = thoiGianConLai.ToString();
                             }
                             if (spl[4] == "hienthidiemKP")
                             {
@@ -394,7 +424,7 @@ namespace TC_Project
                         }
                         else
                         {
-                            
+
                             onoffChinhPhuc(true);
                             hienthicauhoichinh(true);
                             lblThoiGian.Visible = true;
@@ -407,7 +437,7 @@ namespace TC_Project
                             if (spl[5] == "ready")
                             {
                                 // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                
+
                                 CloseFormsByName("FormZoomImage");
 
                                 timerTC.Enabled = false;
@@ -458,7 +488,7 @@ namespace TC_Project
                                 {
                                     timerTC.Enabled = false;
 
-                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false,true, trangthailat, diemGK, true);
+                                    processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), false, true, trangthailat, diemGK, true);
                                 }
                                 else
                                 {
@@ -482,7 +512,7 @@ namespace TC_Project
                             {
                                 ReloadPanelAndPictures();
                                 load6NutMacDinh(); // <- gọi ở đây
-                                processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), true, false,true, diemGK, true);
+                                processKhamPhaChiaSe(id, int.Parse(spl[3]), int.Parse(spl[4]), true, false, true, diemGK, true);
                             }
                             if (spl[5] == "capnhatTongDiem")
                             {
@@ -511,8 +541,8 @@ namespace TC_Project
                         if (spl[5] == "0")
                         {
                             // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                            
-                            CloseFormsByName("frmTongDiem", "frmKhamGia","frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
+
+                            CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
 
 
                             lblThoiGian.Visible = false;
@@ -631,7 +661,7 @@ namespace TC_Project
                     }
                     if (spl[2] == "playkhangia")
                     {
-                        
+
                         CloseFormsByName("frmDapAnKP");
 
 
@@ -715,7 +745,7 @@ namespace TC_Project
                     {
                         CloseFormsByName("frmDapAnKP", "frmtraloi", "frmKhamGia");
 
-                        
+
                         frmTongDiem = new frmTongDiem();
                         frmTongDiem.Show();
                         //pnlDiemSo.Visible = false;
@@ -777,7 +807,7 @@ namespace TC_Project
                             lblthele.Text = teamnext != null
                             ? $"Congratulations to candidate {teamplaying.tennguoichoi.ToString().ToUpper()} completed the Warm-up section\nCandidate {teamnext.tennguoichoi.ToString().ToUpper()} preparing for the section"
                             : $"Congratulations to candidate {teamplaying.tennguoichoi.ToString().ToUpper()} has completed the Warm-up section";
-                            
+
                             thoiGianConLai = 60;
                             timerTC.Enabled = false;
                             frmtraloi = new frmtraloi(sock, int.Parse(spl[0]), int.Parse(spl[3]), int.Parse(spl[4]), ttGoiKD, false);
@@ -825,7 +855,7 @@ namespace TC_Project
                     {
                         layCuocThiHienTai();
                         thoiGianConLai = 20;
-                        lblThoiGian.Text = thoiGianConLai.ToString() ;
+                        lblThoiGian.Text = thoiGianConLai.ToString();
                         onOffUc(4, false);
                         lblThoiGian.Location = new Point(64, 277);
                         lblThoiGian.ForeColor = Color.White;
@@ -895,14 +925,14 @@ namespace TC_Project
                             int cauhoiId = Convert.ToInt32(spl[4]);
                             ds_goicauhoishining vd = _entities.ds_goicauhoishining.Find(cauhoiId);
                             x2 = false;
-                            
+
                             loadNutDangChon(cauhoiId, x2);
                             processToaSang(int.Parse(spl[0]), int.Parse(spl[4]), tt, x2, false, true, false, false);
 
                         }
 
 
-                        lblThoiGian.Text = thoiGianConLai.ToString() ;
+                        lblThoiGian.Text = thoiGianConLai.ToString();
                     }
                 }
             }
@@ -1274,6 +1304,7 @@ namespace TC_Project
             ds_goicaudiscovery goi2 = null;
             ds_doi thisinh = null;
             ds_goicaudiscovery cauHoiChinhCP = _entities.ds_goicaudiscovery.Find(cauhoichude);
+            _entities.Entry(cauHoiChinhCP).Reload(); // ⚠️ Nạp lại từ DB
 
             if (cauHoiChinhCP == null) return;
 
@@ -1366,7 +1397,7 @@ namespace TC_Project
                         pBCauHoiChinhCP.BackgroundImage.Dispose();
                         pBCauHoiChinhCP.BackgroundImage = null;
                     }
-                    LoadAnhPhuDaLat(cauhoichude, thisinh.doiid);
+                    LoadAnhPhuDaLat(cauhoichude, thisinh.doiid, (int)cauHoiPhu.vitri);
 
                     if (diemGK)
                     {
@@ -1390,8 +1421,14 @@ namespace TC_Project
             }
             else
             {
+                
                 invisibleGuiCP();
-
+                // Ẩn tất cả ảnh phụ nếu đang hiện
+                foreach (Control ctrl in pBCauHoiChinhCP.Controls)
+                {
+                    if (ctrl is PictureBox pb && pb.Name.StartsWith("pb_anhphu_"))
+                        pb.Visible = false;
+                }
                 string fileName = start ? cauHoiChinhCP.noidungthisinh : cauHoiChinhCP.noidungchude;
                 string imagePath = Path.Combine(currentPath, "Resources", "pic", fileName);
                 string videoPath = Path.Combine(currentPath, "Resources", "Video", fileName);
@@ -1422,6 +1459,7 @@ namespace TC_Project
                 }
                 else
                 {
+                    
                     if (File.Exists(imagePath))
                     {
                         if (Application.OpenForms["FormZoomImage"] != null)
@@ -1854,7 +1892,7 @@ namespace TC_Project
                                 }
                             }
                         }
-                        
+
                     }
 
                     EnabledGuiVD();
@@ -1874,61 +1912,47 @@ namespace TC_Project
 
         #region ucKhamPhaChiaSe
 
-        
 
-        private void LoadAnhPhuDaLat(int cauchude, int doiid)
+
+private void LoadAnhPhuDaLat(int cauchude, int doiid, int vitri)
+{
+    var key = (cauchude, doiid, vitri);
+
+    // Ẩn tất cả các ảnh phụ đã add vào form
+    foreach (Control ctrl in this.Controls)
+    {
+        if (ctrl is PictureBox pb && pb.Name.StartsWith("pb_anhphu_"))
+            pb.Visible = false;
+    }
+
+    if (_anhPhuDaLatCache.TryGetValue(key, out var img))
+    {
+        var targetName = $"pb_anhphu_{cauchude}_{doiid}_{vitri}";
+        var pbTarget = this.Controls.Find(targetName, true).FirstOrDefault() as PictureBox;
+        if (pbTarget != null)
         {
-            var dsAnhDaLat = _entities.ds_goicaudiscovery
-                .Where(x => x.cauhoichaid == cauchude && x.doithiid == doiid && x.trangthailatAnhPhu == 1)
-                .ToList();
-
-            // Hide all the small picture boxes
-            pbCau1.Visible = false;
-            pbCau2.Visible = false;
-            pbCau3.Visible = false;
-            pbCau4.Visible = false;
-            pbCau5.Visible = false;
-            pbCau6.Visible = false;
-            if (pBCauHoiChinhCP.BackgroundImage != null)
-            {
-                pBCauHoiChinhCP.BackgroundImage.Dispose();
-                pBCauHoiChinhCP.BackgroundImage = null;
-            }
-            // Create a combined image for all secondary images
-            if (dsAnhDaLat.Count > 0)
-            {
-
-                for (int i = 0; i < dsAnhDaLat.Count; i++)
-                {
-                    _entities.Entry(dsAnhDaLat[i]).Reload(); // ⚠️ Nạp lại từ DB
-
-                    string imagePath = Path.Combine(currentPath, "Resources", "pic", dsAnhDaLat[i].noidungchude);
-                    if (File.Exists(imagePath))
-                    {
-                        Image img = Image.FromFile(imagePath);
-
-                        pBCauHoiChinhCP.BackgroundImage = img;
-                        pBCauHoiChinhCP.BackgroundImageLayout = ImageLayout.Stretch;
-                    }
-                }
-
+            pbTarget.Visible = true;
+            pbTarget.BringToFront();
+        }
+    }
+    else
+    {
                 
-            }
-            else
-            {
-                // If no secondary images, show the main topic image
+                // fallback: hiển thị ảnh chủ đề chính nếu không có ảnh phụ
                 var cauHoiChinh = _entities.ds_goicaudiscovery.Find(cauchude);
-                if (cauHoiChinh != null && !string.IsNullOrEmpty(cauHoiChinh.noidungchude))
-                {
-                    string mainImagePath = Path.Combine(currentPath, "Resources", "pic", cauHoiChinh.noidungchude);
-                    if (File.Exists(mainImagePath))
-                    {
-                        pBCauHoiChinhCP.BackgroundImage = Image.FromFile(mainImagePath);
-                        pBCauHoiChinhCP.BackgroundImageLayout = ImageLayout.Stretch;
-                    }
-                }
+        if (cauHoiChinh != null && !string.IsNullOrEmpty(cauHoiChinh.noidungchude))
+        {
+            string mainImagePath = Path.Combine(currentPath, "Resources", "pic", cauHoiChinh.noidungchude);
+            if (File.Exists(mainImagePath))
+            {
+                pBCauHoiChinhCP.BackgroundImage = Image.FromFile(mainImagePath);
+                pBCauHoiChinhCP.BackgroundImageLayout = ImageLayout.Stretch;
+                pBCauHoiChinhCP.Visible = true;
+                pBCauHoiChinhCP.BringToFront();
             }
         }
+    }
+}
         private void invisibleGuiCP()
         {
             lblCauhoiphu.Visible = false;
@@ -1963,7 +1987,7 @@ namespace TC_Project
         {
             string basePath = currentPath + "\\Resources\\group4\\";
 
-            
+
 
             // Mảng PictureBox cần reload
             PictureBox[] listPB = { pbCau1, pbCau2, pbCau3, pbCau4, pbCau5, pbCau6 };
@@ -2436,7 +2460,7 @@ namespace TC_Project
                 {
                     case 1:
                         pbGoi1VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pbGoi1VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-star.png"): System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-dis.png");
+                        pbGoi1VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-dis.png");
                         break;
                     case 2:
                         pbGoi2VD.SizeMode = PictureBoxSizeMode.StretchImage;
