@@ -1496,7 +1496,7 @@ namespace TC_Project
 
                         if (da)
                         {
-                            loadNutDaChon(cauhoiid);
+                            loadNutDaChon(cauhoiid, x2);
                             //pbDapanCH.Visible = true;
                             pbDATS.Visible = true;
 
@@ -1546,7 +1546,7 @@ namespace TC_Project
 
                                         if (da)
                                         {
-                                            loadNutDaChon(cauhoiid);
+                                            loadNutDaChon(cauhoiid, x2);
                                             //pbDapanCH.Visible = true;
                                             pbDATS.Visible = true;
 
@@ -1608,7 +1608,7 @@ namespace TC_Project
                                         {
                                             if (da)
                                             {
-                                                loadNutDaChon(cauhoiid);
+                                                loadNutDaChon(cauhoiid, x2);
                                                 axWinCauHoiHinhAnh.Visible = false;
                                                 axWinCauHoiHinhAnh.Ctlcontrols.stop();
                                                 //pbDapanCH.Visible = true;
@@ -1649,7 +1649,7 @@ namespace TC_Project
                                             axWinCauHoiHinhAnh.Ctlcontrols.stop();
                                             if (da)
                                             {
-                                                loadNutDaChon(cauhoiid);
+                                                loadNutDaChon(cauhoiid, x2);
                                                 axWinCauHoiHinhAnh.Visible = false;
                                                 axWinCauHoiHinhAnh.Ctlcontrols.stop();
                                                 //pbDapanCH.Visible = true;
@@ -1722,7 +1722,7 @@ namespace TC_Project
 
                                     if (da)
                                     {
-                                        loadNutDaChon(cauhoiid);
+                                        loadNutDaChon(cauhoiid, x2);
                                         //pbDapanCH.Visible = true;
                                         pbDATS.Visible = true;
 
@@ -1782,7 +1782,7 @@ namespace TC_Project
                                         pbImage.Visible = false;
                                         if (da)
                                         {
-                                            loadNutDaChon(cauhoiid);
+                                            loadNutDaChon(cauhoiid, x2);
                                             axWinCauHoiHinhAnh.Visible = false;
                                             axWinCauHoiHinhAnh.Ctlcontrols.stop();
                                             //pbDapanCH.Visible = true;
@@ -1819,7 +1819,7 @@ namespace TC_Project
                                     {
                                         if (da)
                                         {
-                                            loadNutDaChon(cauhoiid);
+                                            loadNutDaChon(cauhoiid, x2);
                                             //pbDapanCH.Visible = true;
                                             pbDATS.Visible = true;
 
@@ -2396,23 +2396,23 @@ namespace TC_Project
                         {
                             case 1:
                                 pbGoi1VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                                pbGoi1VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-dis.png");
+                                pbGoi1VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-dis.png");
                                 break;
                             case 2:
                                 pbGoi2VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                                pbGoi2VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\2-dis.png");
+                                pbGoi2VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\2-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\2-dis.png");
                                 break;
                             case 3:
                                 pbGoi3VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                                pbGoi3VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\3-dis.png"); ;
+                                pbGoi3VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\3-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\3-dis.png");
                                 break;
                             case 4:
                                 pbGoi4VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                                pbGoi4VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\4-dis.png"); ;
+                                pbGoi4VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\4-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\4-dis.png"); ;
                                 break;
                             case 5:
                                 pbGoi5VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                                pbGoi5VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\5-dis.png"); ;
+                                pbGoi5VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\5-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\5-dis.png"); ;
                                 break;
 
                         }
@@ -2425,7 +2425,7 @@ namespace TC_Project
 
 
         }
-        private void loadNutDaChon(int cauhoiid)
+        private void loadNutDaChon(int cauhoiid, bool isX2)
         {
             var dsCauDaChon = _entities.ds_goicauhoishining
                 .Where(x => x.cauhoiid == cauhoiid && x.trangThai == 2)
@@ -2436,23 +2436,23 @@ namespace TC_Project
                 {
                     case 1:
                         pbGoi1VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pbGoi1VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-dis.png");
+                        pbGoi1VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-star.png"): System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\1-dis.png");
                         break;
                     case 2:
                         pbGoi2VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pbGoi2VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\2-dis.png");
+                        pbGoi2VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\2-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\2-dis.png");
                         break;
                     case 3:
                         pbGoi3VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pbGoi3VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\3-dis.png"); ;
+                        pbGoi3VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\3-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\3-dis.png");
                         break;
                     case 4:
                         pbGoi4VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pbGoi4VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\4-dis.png"); ;
+                        pbGoi4VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\4-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\4-dis.png"); ;
                         break;
                     case 5:
                         pbGoi5VD.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pbGoi5VD.Image = System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\5-dis.png"); ;
+                        pbGoi5VD.Image = isX2 ? System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\5-star.png") : System.Drawing.Image.FromFile(currentPath + "\\Resources\\group4\\5-dis.png"); ;
                         break;
 
                 }
