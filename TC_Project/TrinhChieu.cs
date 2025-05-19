@@ -1263,7 +1263,8 @@ namespace TC_Project
                     }
                     ds_goicauhoikhoidong cauhoi = _entities.ds_goicauhoikhoidong.Find(cauhoiid);
                     _entities.Entry(cauhoi).Reload(); // ⚠️ Nạp lại từ DB
-
+                    lblNoiDungCauHoi.ForeColor = Color.FromArgb(25, 25, 112); // Midnight Blue
+                    labelNoiDungCauHoi.ForeColor = Color.FromArgb(25, 25, 112); // Midnight Blue
                     lblNoiDungCauHoi.Text = cauhoi.noidungcauhoi;
                     labelNoiDungCauHoi.Text = "Question " + cauhoi.vitri + ":";
                 }
@@ -2170,17 +2171,17 @@ private void LoadAnhPhuDaLat(int cauchude, int doiid, int vitri)
             //Hiển thị loại câu hỏi theo vị trí
             if (khamPha.vitri == 1 || khamPha.vitri == 2)
             {
-                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following words or phrases to make a complete sentence";
+                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following words or phrases to make a complete sentence.";
 
             }
             else if (khamPha.vitri == 3 || khamPha.vitri == 4)
             {
-                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful conversation";
+                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following utterances to make a meaningful conversation.";
 
             }
             else
             {
-                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful paragraph";
+                lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful paragraph.";
 
             }
 
@@ -2200,7 +2201,7 @@ private void LoadAnhPhuDaLat(int cauchude, int doiid, int vitri)
 
             Color primaryColor = Color.FromArgb(52, 152, 219);
             Color hoverColor = Color.FromArgb(41, 128, 185);
-            Font btnFont = new Font("Segoe UI", 11, FontStyle.Bold);
+            Font btnFont = new Font("Arial", 11, FontStyle.Bold);
             Color textColor = Color.White;
             int buttonWidth = flowPanelSentences.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
 

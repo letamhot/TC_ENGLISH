@@ -53,8 +53,8 @@ namespace TC_Project
                 lblCauHoi.Visible = true;
                 lblDapAn.Visible = false;
                 pbDA.Visible = false;
-                lblCauHoi.Text = "• This section will have 4 questions.\n• The questions will be related to the program sponsors or other relevant content.";
-
+                lblCauHoi.Text = "• This section will have 4 questions.\n• The questions will be related to the program sponsors and general knowledge.\r\n";
+                
             }
             else
             {

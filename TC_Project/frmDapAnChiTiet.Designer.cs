@@ -65,19 +65,19 @@
             // 
             this.labelDapAnCT.BackColor = System.Drawing.Color.Transparent;
             this.labelDapAnCT.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDapAnCT.ForeColor = System.Drawing.Color.Black;
+            this.labelDapAnCT.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelDapAnCT.Location = new System.Drawing.Point(136, 204);
             this.labelDapAnCT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDapAnCT.Name = "labelDapAnCT";
             this.labelDapAnCT.Size = new System.Drawing.Size(877, 46);
             this.labelDapAnCT.TabIndex = 85;
-            this.labelDapAnCT.Text = "QUESTION  3:";
+            this.labelDapAnCT.Text = "ANSWER TO QUESTION 3: ";
             // 
             // txtDapAnCT
             // 
             this.txtDapAnCT.BackColor = System.Drawing.Color.Transparent;
             this.txtDapAnCT.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDapAnCT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtDapAnCT.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.txtDapAnCT.Location = new System.Drawing.Point(138, 272);
             this.txtDapAnCT.Name = "txtDapAnCT";
             this.txtDapAnCT.Size = new System.Drawing.Size(1129, 464);

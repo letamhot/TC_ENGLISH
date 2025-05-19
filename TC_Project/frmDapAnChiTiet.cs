@@ -35,9 +35,9 @@ namespace TC_Project
             ds_cauhoithuthach ds = _entities.ds_cauhoithuthach.FirstOrDefault(x => x.cauhoiid == cauhoiid && x.cuocthiid == cuocthiId);
             if (ds != null)
             {
-                labelDapAnCT.Text = "QUESTION " + ds.vitri+":";
-                labelDapAnCT.ForeColor = Color.Black;
-                txtDapAnCT.ForeColor = Color.Black;
+                labelDapAnCT.Text = "ANSWER QUESTION " + ds.vitri+":";
+                labelDapAnCT.ForeColor = Color.DodgerBlue;
+                txtDapAnCT.ForeColor = Color.DarkSlateGray;
                 txtDapAnCT.Text = ds.dapantext;
                 txtDapAnCT.Font = new Font("Arial", ds.dapantext.Length > 600 ? 22 : ds.dapantext.Length < 100 ? 30 : 28, FontStyle.Bold);
             }

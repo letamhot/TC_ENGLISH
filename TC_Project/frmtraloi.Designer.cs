@@ -52,6 +52,8 @@ namespace TC_Project
             this.lbltraloi3 = new System.Windows.Forms.Panel();
             this.lbltraloi4 = new System.Windows.Forms.Panel();
             this.lbltraloi5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.panel1.SuspendLayout();
@@ -275,7 +277,7 @@ namespace TC_Project
             this.lbltraloi1.BackColor = System.Drawing.Color.Transparent;
             this.lbltraloi1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi1.BackgroundImage")));
             this.lbltraloi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lbltraloi1.Location = new System.Drawing.Point(1093, 226);
+            this.lbltraloi1.Location = new System.Drawing.Point(1154, 227);
             this.lbltraloi1.Name = "lbltraloi1";
             this.lbltraloi1.Size = new System.Drawing.Size(76, 70);
             this.lbltraloi1.TabIndex = 119;
@@ -285,7 +287,7 @@ namespace TC_Project
             this.lbltraloi2.BackColor = System.Drawing.Color.Transparent;
             this.lbltraloi2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi2.BackgroundImage")));
             this.lbltraloi2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lbltraloi2.Location = new System.Drawing.Point(1093, 323);
+            this.lbltraloi2.Location = new System.Drawing.Point(1154, 324);
             this.lbltraloi2.Name = "lbltraloi2";
             this.lbltraloi2.Size = new System.Drawing.Size(76, 70);
             this.lbltraloi2.TabIndex = 120;
@@ -295,7 +297,7 @@ namespace TC_Project
             this.lbltraloi3.BackColor = System.Drawing.Color.Transparent;
             this.lbltraloi3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi3.BackgroundImage")));
             this.lbltraloi3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lbltraloi3.Location = new System.Drawing.Point(1093, 425);
+            this.lbltraloi3.Location = new System.Drawing.Point(1154, 426);
             this.lbltraloi3.Name = "lbltraloi3";
             this.lbltraloi3.Size = new System.Drawing.Size(76, 70);
             this.lbltraloi3.TabIndex = 120;
@@ -305,7 +307,7 @@ namespace TC_Project
             this.lbltraloi4.BackColor = System.Drawing.Color.Transparent;
             this.lbltraloi4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi4.BackgroundImage")));
             this.lbltraloi4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lbltraloi4.Location = new System.Drawing.Point(1093, 529);
+            this.lbltraloi4.Location = new System.Drawing.Point(1154, 530);
             this.lbltraloi4.Name = "lbltraloi4";
             this.lbltraloi4.Size = new System.Drawing.Size(76, 70);
             this.lbltraloi4.TabIndex = 120;
@@ -315,10 +317,32 @@ namespace TC_Project
             this.lbltraloi5.BackColor = System.Drawing.Color.Transparent;
             this.lbltraloi5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi5.BackgroundImage")));
             this.lbltraloi5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lbltraloi5.Location = new System.Drawing.Point(1093, 626);
+            this.lbltraloi5.Location = new System.Drawing.Point(1154, 627);
             this.lbltraloi5.Name = "lbltraloi5";
             this.lbltraloi5.Size = new System.Drawing.Size(76, 70);
             this.lbltraloi5.TabIndex = 120;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Yellow;
+            this.label6.Location = new System.Drawing.Point(251, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(178, 50);
+            this.label6.TabIndex = 121;
+            this.label6.Text = "Answers";
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Yellow;
+            this.label7.Location = new System.Drawing.Point(993, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(391, 50);
+            this.label7.TabIndex = 122;
+            this.label7.Text = "Candidate\'s answers";
             // 
             // frmtraloi
             // 
@@ -327,6 +351,8 @@ namespace TC_Project
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1368, 768);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbltraloi5);
             this.Controls.Add(this.lbltraloi4);
             this.Controls.Add(this.lbltraloi3);
@@ -380,5 +406,7 @@ namespace TC_Project
         private System.Windows.Forms.Panel lbltraloi3;
         private System.Windows.Forms.Panel lbltraloi4;
         private System.Windows.Forms.Panel lbltraloi5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
