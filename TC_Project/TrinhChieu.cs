@@ -313,16 +313,16 @@ namespace TC_Project
                             {
 
                                 // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
-                                //if (Application.OpenForms["frmDapAnKP"] != null)
-                                //{
-                                //    Application.OpenForms["frmDapAnKP"].Close();
-                                //}
+                                if (Application.OpenForms["frmDapAnChiTiet"] != null)
+                                {
+                                    Application.OpenForms["frmDapAnChiTiet"].Close();
+                                }
                                 //// Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
                                 //if (Application.OpenForms["frmDapAnKP"] != null)
                                 //{
                                 //    Application.OpenForms["frmDapAnKP"].Close();
                                 //}
-                                CloseFormsByName("frmDapAnKP", "frmKhamGia");
+                                CloseFormsByName("frmDapAnKP", "frmKhamGia", "frmDapAnChiTiet");
 
                                 //frmTongDiem = new frmTongDiem();
                                 //this.Hide();
@@ -1915,7 +1915,7 @@ namespace TC_Project
 
 
 
-private void LoadAnhPhuDaLat(int cauchude, int doiid, int vitri)
+        private void LoadAnhPhuDaLat(int cauchude, int doiid, int vitri)
 {
     var key = (cauchude, doiid, vitri);
 
@@ -2179,9 +2179,14 @@ private void LoadAnhPhuDaLat(int cauchude, int doiid, int vitri)
                 lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following utterances to make a meaningful conversation.";
 
             }
-            else
+            else if (khamPha.vitri == 5)
             {
                 lblCauHoiTT.Text = "Question " + khamPha.vitri + ": Rearrange the following sentences to make a meaningful paragraph.";
+
+            }
+            else
+            {
+                lblCauHoiTT.Text = "Question " + khamPha.vitri + ":";
 
             }
 

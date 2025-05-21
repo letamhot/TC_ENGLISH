@@ -275,7 +275,6 @@ namespace TC_Project
             // lbltraloi1
             // 
             this.lbltraloi1.BackColor = System.Drawing.Color.Transparent;
-            this.lbltraloi1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi1.BackgroundImage")));
             this.lbltraloi1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lbltraloi1.Location = new System.Drawing.Point(1154, 227);
             this.lbltraloi1.Name = "lbltraloi1";
@@ -285,7 +284,6 @@ namespace TC_Project
             // lbltraloi2
             // 
             this.lbltraloi2.BackColor = System.Drawing.Color.Transparent;
-            this.lbltraloi2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi2.BackgroundImage")));
             this.lbltraloi2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lbltraloi2.Location = new System.Drawing.Point(1154, 324);
             this.lbltraloi2.Name = "lbltraloi2";
@@ -295,7 +293,6 @@ namespace TC_Project
             // lbltraloi3
             // 
             this.lbltraloi3.BackColor = System.Drawing.Color.Transparent;
-            this.lbltraloi3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi3.BackgroundImage")));
             this.lbltraloi3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lbltraloi3.Location = new System.Drawing.Point(1154, 426);
             this.lbltraloi3.Name = "lbltraloi3";
@@ -305,7 +302,6 @@ namespace TC_Project
             // lbltraloi4
             // 
             this.lbltraloi4.BackColor = System.Drawing.Color.Transparent;
-            this.lbltraloi4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi4.BackgroundImage")));
             this.lbltraloi4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lbltraloi4.Location = new System.Drawing.Point(1154, 530);
             this.lbltraloi4.Name = "lbltraloi4";
@@ -315,7 +311,6 @@ namespace TC_Project
             // lbltraloi5
             // 
             this.lbltraloi5.BackColor = System.Drawing.Color.Transparent;
-            this.lbltraloi5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbltraloi5.BackgroundImage")));
             this.lbltraloi5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.lbltraloi5.Location = new System.Drawing.Point(1154, 627);
             this.lbltraloi5.Name = "lbltraloi5";
@@ -325,7 +320,7 @@ namespace TC_Project
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("iCiel Pony", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Yellow;
             this.label6.Location = new System.Drawing.Point(251, 160);
             this.label6.Name = "label6";
@@ -336,7 +331,7 @@ namespace TC_Project
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("iCiel Pony", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Yellow;
             this.label7.Location = new System.Drawing.Point(993, 160);
             this.label7.Name = "label7";

@@ -52,8 +52,8 @@ namespace TC_Project
                 labelCauHoi.Text = "Contest rules: ";
                 lblCauHoi.Visible = true;
                 lblDapAn.Visible = false;
-                pbDA.Visible = false;
-                lblCauHoi.Text = "• This section will have 4 questions.\n• The questions will be related to the program sponsors and general knowledge.\r\n";
+                pbDA.Visible = false; 
+                lblCauHoi.Text = "• This section will have 4 questions.\n• The questions will be related to the program \n sponsors and general knowledge.\r\n";
                 
             }
             else

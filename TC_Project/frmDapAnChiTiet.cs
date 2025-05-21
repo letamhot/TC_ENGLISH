@@ -37,7 +37,7 @@ namespace TC_Project
             {
                 labelDapAnCT.Text = "ANSWER QUESTION " + ds.vitri+":";
                 labelDapAnCT.ForeColor = Color.DodgerBlue;
-                txtDapAnCT.ForeColor = Color.DarkSlateGray;
+                txtDapAnCT.ForeColor = Color.Black;
                 txtDapAnCT.Text = ds.dapantext;
                 txtDapAnCT.Font = new Font("Arial", ds.dapantext.Length > 600 ? 22 : ds.dapantext.Length < 100 ? 30 : 28, FontStyle.Bold);
             }
