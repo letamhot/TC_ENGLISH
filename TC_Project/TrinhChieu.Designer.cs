@@ -390,9 +390,9 @@
             // 
             // flowPanelSentences
             // 
-            this.flowPanelSentences.Location = new System.Drawing.Point(26, 99);
+            this.flowPanelSentences.Location = new System.Drawing.Point(26, 88);
             this.flowPanelSentences.Name = "flowPanelSentences";
-            this.flowPanelSentences.Size = new System.Drawing.Size(963, 419);
+            this.flowPanelSentences.Size = new System.Drawing.Size(963, 464);
             this.flowPanelSentences.TabIndex = 76;
             // 
             // lblCauhoi
@@ -407,7 +407,7 @@
             // lblCauHoiTT
             // 
             this.lblCauHoiTT.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCauHoiTT.Location = new System.Drawing.Point(34, 13);
+            this.lblCauHoiTT.Location = new System.Drawing.Point(34, 8);
             this.lblCauHoiTT.Name = "lblCauHoiTT";
             this.lblCauHoiTT.Size = new System.Drawing.Size(950, 76);
             this.lblCauHoiTT.TabIndex = 34;

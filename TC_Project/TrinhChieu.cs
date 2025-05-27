@@ -231,7 +231,7 @@ namespace TC_Project
                         onoffflowPanelSentences(false);
                         onOffUc(5, true);
                         //lblThoiGiankg.Visible = false;
-                        hienthicauhoichinh(false);
+                        //hienthicauhoichinh(false);
                         //pnlNoiDung.Controls.Clear();
                         this.BackgroundImage = Image.FromFile(currentPath + "\\Resources\\group6\\gt_qmds.png");
                         this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -264,7 +264,7 @@ namespace TC_Project
                         onOffUc(1, true);
                         pnlDiemSo.Visible = false;
                         lblThoiGian.Visible = false;
-                        hienthicauhoichinh(false);
+                        //hienthicauhoichinh(false);
 
 
                     }
@@ -275,7 +275,7 @@ namespace TC_Project
                         CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
                         lblThoiGian.Visible = true;
                         onoffKhanGia(true);
-                        hienthicauhoichinh(false);
+                        //hienthicauhoichinh(false);
                         onoffChinhPhuc(false);
                         onoffflowPanelSentences(true);
 
@@ -417,7 +417,7 @@ namespace TC_Project
                             //pnlNoiDung.Controls.Clear();
                             pnlDiemSo.Visible = false;
                             lblThoiGian.Visible = false;
-                            hienthicauhoichinh(false);
+                            //hienthicauhoichinh(false);
 
 
                             //this.Show();
@@ -426,7 +426,7 @@ namespace TC_Project
                         {
 
                             onoffChinhPhuc(true);
-                            hienthicauhoichinh(true);
+                            //hienthicauhoichinh(true);
                             lblThoiGian.Visible = true;
                             pnAnhCauHoi.Visible = false;
                             lblThoiGian.Location = new Point(84, 271);
@@ -546,7 +546,7 @@ namespace TC_Project
 
 
                             lblThoiGian.Visible = false;
-                            hienthicauhoichinh(false);
+                            //hienthicauhoichinh(false);
                             onoffKhanGia(false);
                             onoffChinhPhuc(false);
                             onoffTimeMath(false);
@@ -557,7 +557,7 @@ namespace TC_Project
                             onOffUc(4, true);
                             //pnlNoiDung.Controls.Clear();
                             pnlDiemSo.Visible = false;
-                            hienthicauhoichinh(false);
+                            //hienthicauhoichinh(false);
                         }
                         else
                         {
@@ -569,7 +569,7 @@ namespace TC_Project
                             lblThoiGian.Location = new Point(64, 277);
                             lblThoiGian.ForeColor = Color.White;
 
-                            hienthicauhoichinh(false);
+                            //hienthicauhoichinh(false);
                             onoffChinhPhuc(false);
                             onoffTimeMath(true);
                             onoffflowPanelSentences(false);
@@ -587,10 +587,10 @@ namespace TC_Project
                                 tt_file = false;
                                 System.Media.SoundPlayer sound = new System.Media.SoundPlayer(currentPath + "\\Resources\\20s.wav");
                                 sound.Play();
-
-
-
                                 processToaSang(int.Parse(spl[0]), int.Parse(spl[4]), tt, false, false, false, false, false);
+
+
+
                             }
                             if (spl[5] == "start_ngoisaohivong")
                             {
@@ -603,7 +603,15 @@ namespace TC_Project
 
 
                             }
-
+                            if (spl[5] == "start_x2")
+                            {
+                                timerTC.Enabled = true;  // Thêm dòng này để kích hoạt timer
+                                tt = true;
+                                tt_file = false;
+                                System.Media.SoundPlayer sound = new System.Media.SoundPlayer(currentPath + "\\Resources\\20s.wav");
+                                sound.Play();
+                                processToaSang(int.Parse(spl[0]), int.Parse(spl[4]), tt, true, false, false, false, false);
+                            }
                             if (spl[5] == "ready")
                             {
 
@@ -635,6 +643,14 @@ namespace TC_Project
                                 this.BackgroundImageLayout = ImageLayout.Stretch;
                                 timerTC.Enabled = false;
                                 processToaSang(int.Parse(spl[0]), int.Parse(spl[4]), tt, false, false, false, false);
+                            }
+                            if (spl[5] == "loadDanhSachCauHoi")
+                            {
+                                //this.BackgroundImage = Image.FromFile(currentPath + "\\Resources\\group6\\tc_mc_vd.png");
+                                //this.BackgroundImageLayout = ImageLayout.Stretch;
+                                timerTC.Enabled = false;
+                                VisibleGuiVD();
+                                lblTheLeVD.Text = "Field of knowledge of the next question\r\n";
                             }
                             else if (spl[5] == "forceanswer")
                             {
@@ -757,7 +773,7 @@ namespace TC_Project
                         //pnlKhoiDong.Visible = true;
                         //pnlNoiDung.Visible = false;
                         onOffUc(1, false);
-                        hienthicauhoichinh(false);
+                        //hienthicauhoichinh(false);
                         onoffChinhPhuc(false);
                         onoffflowPanelSentences(false);
 
@@ -860,7 +876,7 @@ namespace TC_Project
                         lblThoiGian.Location = new Point(64, 277);
                         lblThoiGian.ForeColor = Color.White;
 
-                        hienthicauhoichinh(false);
+                        ///hienthicauhoichinh(false);
                         onoffChinhPhuc(false);
                         onoffTimeMath(true);
                         onoffflowPanelSentences(false);
@@ -1001,82 +1017,82 @@ namespace TC_Project
 
             }
         }
-        private void hienthicauhoichinh(bool onoff)
-        {
-            string sqlGetCuocthiId = "SELECT cuocthiid FROM ds_cuocthi WHERE trangthai = 1";
-            string sqlGetNoiDungCauHoi = "SELECT chude FROM ds_goicaudiscovery WHERE cauhoichaid IS NULL AND cuocthiid = @CuocthiId AND trangthai = 1";
-            string sqlGetUrlHinhAnh = "SELECT noidungchude FROM ds_goicaudiscovery WHERE cauhoichaid IS NULL AND cuocthiid = @CuocthiId AND trangthai = 1";
-            string sqlGetUrlHinhAnhTS = "SELECT noidungthisinh FROM ds_goicaudiscovery WHERE cauhoichaid IS NULL AND cuocthiid = @CuocthiId AND trangthai = 1";
+        //private void hienthicauhoichinh(bool onoff)
+        //{
+        //    string sqlGetCuocthiId = "SELECT cuocthiid FROM ds_cuocthi WHERE trangthai = 1";
+        //    string sqlGetNoiDungCauHoi = "SELECT chude FROM ds_goicaudiscovery WHERE cauhoichaid IS NULL AND cuocthiid = @CuocthiId AND trangthai = 1";
+        //    string sqlGetUrlHinhAnh = "SELECT noidungchude FROM ds_goicaudiscovery WHERE cauhoichaid IS NULL AND cuocthiid = @CuocthiId AND trangthai = 1";
+        //    string sqlGetUrlHinhAnhTS = "SELECT noidungthisinh FROM ds_goicaudiscovery WHERE cauhoichaid IS NULL AND cuocthiid = @CuocthiId AND trangthai = 1";
 
-            int cuocthiId = 0;
-            string noidungCauHoi = "";
-            string urlhinhanhchude = "";
-            string urlhinhanhthisinh = "";
-            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["QMDS_Connection"].ConnectionString))
-            {
-                connection.Open();
+        //    int cuocthiId = 0;
+        //    string noidungCauHoi = "";
+        //    string urlhinhanhchude = "";
+        //    string urlhinhanhthisinh = "";
+        //    using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["QMDS_Connection"].ConnectionString))
+        //    {
+        //        connection.Open();
 
-                try
-                {
-                    // Lấy cuocthiid
-                    using (var command = new SqlCommand(sqlGetCuocthiId, connection))
-                    {
-                        cuocthiId = (int)command.ExecuteScalar();
-                    }
+        //        try
+        //        {
+        //            // Lấy cuocthiid
+        //            using (var command = new SqlCommand(sqlGetCuocthiId, connection))
+        //            {
+        //                cuocthiId = (int)command.ExecuteScalar();
+        //            }
 
-                    if (cuocthiId > 0)
-                    {
-                        // Lấy nội dung câu hỏi chính
-                        using (var command = new SqlCommand(sqlGetNoiDungCauHoi, connection))
-                        {
-                            command.Parameters.AddWithValue("@CuocthiId", cuocthiId);
-                            noidungCauHoi = command.ExecuteScalar() as string;
-                        }
+        //            if (cuocthiId > 0)
+        //            {
+        //                // Lấy nội dung câu hỏi chính
+        //                using (var command = new SqlCommand(sqlGetNoiDungCauHoi, connection))
+        //                {
+        //                    command.Parameters.AddWithValue("@CuocthiId", cuocthiId);
+        //                    noidungCauHoi = command.ExecuteScalar() as string;
+        //                }
 
-                        // Lấy URL hình ảnh chủ đề
-                        using (var command = new SqlCommand(sqlGetUrlHinhAnh, connection))
-                        {
-                            command.Parameters.AddWithValue("@CuocthiId", cuocthiId);
-                            urlhinhanhchude = command.ExecuteScalar() as string;
-                        }
+        //                // Lấy URL hình ảnh chủ đề
+        //                using (var command = new SqlCommand(sqlGetUrlHinhAnh, connection))
+        //                {
+        //                    command.Parameters.AddWithValue("@CuocthiId", cuocthiId);
+        //                    urlhinhanhchude = command.ExecuteScalar() as string;
+        //                }
 
-                        // Lấy URL hình ảnh thí sinh (có thể null)
-                        using (var command = new SqlCommand(sqlGetUrlHinhAnhTS, connection))
-                        {
-                            command.Parameters.AddWithValue("@CuocthiId", cuocthiId);
-                            var result = command.ExecuteScalar();
-                            urlhinhanhthisinh = result != DBNull.Value ? (string)result : null;
-                        }
-                    }
-                }
-                finally
-                {
-                    // Đóng kết nối khi hoàn tất
-                    if (connection.State == ConnectionState.Open)
-                        connection.Close();
-                }
-            }
+        //                // Lấy URL hình ảnh thí sinh (có thể null)
+        //                using (var command = new SqlCommand(sqlGetUrlHinhAnhTS, connection))
+        //                {
+        //                    command.Parameters.AddWithValue("@CuocthiId", cuocthiId);
+        //                    var result = command.ExecuteScalar();
+        //                    urlhinhanhthisinh = result != DBNull.Value ? (string)result : null;
+        //                }
+        //            }
+        //        }
+        //        finally
+        //        {
+        //            // Đóng kết nối khi hoàn tất
+        //            if (connection.State == ConnectionState.Open)
+        //                connection.Close();
+        //        }
+        //    }
 
 
 
-            if (!string.IsNullOrEmpty(noidungCauHoi))
-            {
-                //lblCauhoichinhCP.Text = noidungCauHoi;
+        //    if (!string.IsNullOrEmpty(noidungCauHoi))
+        //    {
+        //        //lblCauhoichinhCP.Text = noidungCauHoi;
 
-                string imagePath;
+        //        string imagePath;
 
-                if (!string.IsNullOrWhiteSpace(urlhinhanhthisinh) && File.Exists(currentPath + "\\Resources\\pic\\" + urlhinhanhthisinh))
-                {
-                    imagePath = Path.Combine(currentPath, "Resources", "pic", urlhinhanhthisinh);
-                }
-                else
-                {
-                    imagePath = Path.Combine(currentPath, "Resources", "pic", urlhinhanhchude);
-                }
+        //        if (!string.IsNullOrWhiteSpace(urlhinhanhthisinh) && File.Exists(currentPath + "\\Resources\\pic\\" + urlhinhanhthisinh))
+        //        {
+        //            imagePath = Path.Combine(currentPath, "Resources", "pic", urlhinhanhthisinh);
+        //        }
+        //        else
+        //        {
+        //            imagePath = Path.Combine(currentPath, "Resources", "pic", urlhinhanhchude);
+        //        }
 
-                imageChinhPhucChinh = Image.FromFile(imagePath);
-            }
-        }
+        //        imageChinhPhucChinh = Image.FromFile(imagePath);
+        //    }
+        //}
 
         private void onoffChinhPhuc(bool onoff)
         {
@@ -1354,7 +1370,7 @@ namespace TC_Project
                         pnlKhungTranh.Visible = false;
 
                         pBCauHoiChinhCP.Visible = false;
-                        axWindowsMediaPlayer1.uiMode = "none";
+                        //axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
                         axWindowsMediaPlayer1.Visible = true;
                         axWindowsMediaPlayer1.settings.volume = 100;
@@ -1443,7 +1459,7 @@ namespace TC_Project
                     {
                         pBCauHoiChinhCP.Visible = false;
                         pnlKhungTranh.Visible = false;
-                        axWindowsMediaPlayer1.uiMode = "none";
+                        //axWindowsMediaPlayer1.uiMode = "none";
                         axWindowsMediaPlayer1.URL = videoPath;
                         axWindowsMediaPlayer1.Visible = true;
                         axWindowsMediaPlayer1.settings.volume = 100;
@@ -2206,14 +2222,14 @@ namespace TC_Project
 
             Color primaryColor = Color.FromArgb(52, 152, 219);
             Color hoverColor = Color.FromArgb(41, 128, 185);
-            Font btnFont = new Font("Arial", 11, FontStyle.Bold);
+            Font btnFont = new Font("Arial", 16, FontStyle.Bold);
             Color textColor = Color.White;
             int buttonWidth = flowPanelSentences.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
 
             for (int i = 0; i < sentences.Length && i < answerLabels.Length; i++)
             {
                 string text = answerLabels[i] + ". " + sentences[i].Trim();
-
+               
                 Button btn = new Button
                 {
                     Text = text,
@@ -2301,6 +2317,23 @@ namespace TC_Project
             pbGoi5VD.Visible = true;
             pbGoi3VD.Visible = true;
         }
+        public void VisibleGuiTS()
+        {
+            lblTheLeVD.Visible = false;
+            lblNoiDungCauHoiVD.Visible = false;
+            pbImage.Visible = false;
+            axWinCauHoiHinhAnh.Visible = false;
+            //pbDapanCH.Visible = false;
+            pbDATS.Visible = false;
+            lblDA1.Visible = false;
+            pnlGoiCauHoiVD.Visible = true;
+            pbGoi1VD.Visible = true;
+            pbGoi4VD.Visible = true;
+            pbGoi2VD.Visible = true;
+            pbGoi5VD.Visible = true;
+            pbGoi3VD.Visible = true;
+        }
+
         public void EnabledGuiVD()
         {
             lblTheLeVD.Visible = true;
