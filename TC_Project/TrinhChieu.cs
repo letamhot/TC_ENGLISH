@@ -245,6 +245,8 @@ namespace TC_Project
                     bool dapan = false;
                     if (spl[2] == "playkhoidong")
                     {
+                        lblThoiGian.ForeColor = Color.White;
+
                         CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
 
                         layCuocThiHienTai();
@@ -270,6 +272,8 @@ namespace TC_Project
                     }
                     if (spl[2] == "playthuthach")
                     {
+                        lblThoiGian.ForeColor = Color.White;
+
                         layCuocThiHienTai();
                         // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
                         CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
@@ -398,6 +402,8 @@ namespace TC_Project
                     }
                     if (spl[2] == "playkhamphachiase")
                     {
+                        lblThoiGian.ForeColor = Color.White;
+
                         layCuocThiHienTai();
                         // Giả sử frmTongDiem là form con, kiểm tra và đóng form nếu đang mở
                         CloseFormsByName("frmTongDiem", "frmKhamGia", "frmDapAnKP", "frmtraloi", "frmDapAnChiTiet");
@@ -537,6 +543,8 @@ namespace TC_Project
                     }
                     if (spl[2] == "playtoasang")
                     {
+                        lblThoiGian.ForeColor = Color.White;
+
                         layCuocThiHienTai();
                         if (spl[5] == "0")
                         {
