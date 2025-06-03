@@ -662,6 +662,7 @@ namespace TC_Project
                             }
                             else if (spl[5] == "forceanswer")
                             {
+                                timerTC.Enabled = false;
                                 // Hiển thị đáp án khi thí sinh 1 trả lời đúng hoặc thí sinh 2 dành quyền
                                 layCuocThiHienTai();
                                 da = true;
@@ -895,6 +896,9 @@ namespace TC_Project
 
                         if (spl.Length > 5 && spl[5] == "showanswer")
                         {
+                            timerTC.Enabled = false;
+                            System.Media.SoundPlayer sound = new System.Media.SoundPlayer(currentPath + "\\Resources\\20s.wav");
+                            sound.Stop();
                             // Hiển thị đáp án khi thí sinh 1 trả lời đúng hoặc thí sinh 2 dành quyền
                             layCuocThiHienTai();
                             da = true;
@@ -911,6 +915,9 @@ namespace TC_Project
 
                         else if (spl.Length > 5 && spl[5] == "noanswer")
                         {
+                            timerTC.Enabled = false;
+                            System.Media.SoundPlayer sound = new System.Media.SoundPlayer(currentPath + "\\Resources\\20s.wav");
+                            sound.Stop();
                             // Không hiển thị đáp án khi thí sinh 1 trả lời sai
                             layCuocThiHienTai();
                             da = false;
@@ -2230,7 +2237,7 @@ namespace TC_Project
 
             Color primaryColor = Color.FromArgb(52, 152, 219);
             Color hoverColor = Color.FromArgb(41, 128, 185);
-            Font btnFont = new Font("Arial", 16, FontStyle.Bold);
+            Font btnFont = new Font("Arial", 15, FontStyle.Bold);
             Color textColor = Color.White;
             int buttonWidth = flowPanelSentences.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 10;
 
